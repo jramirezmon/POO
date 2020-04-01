@@ -21,7 +21,7 @@ int posyC = 0;
 float angleTM = 0;
 int posxTM = 20;
 int posyTM = 250;
-
+//juanfer aprende a usar bien git 
 //Triangulo Pequeño 1:
 float angleTP1 = 0;
 int posxTP1 = 20;
