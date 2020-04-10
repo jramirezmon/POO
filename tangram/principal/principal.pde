@@ -1,70 +1,234 @@
-//variables
-//int a=0;
-//int b=0;
-//int distancia = 10000;
-//fin de variables
-
-int [] moverPieza(float distancia, int posx, int posy){
-  int [] coordenadas={posx,posy}; 
-  if(( distancia < 40)&&(mousePressed)){
-    posx = mouseX;
-    posy = mouseY; 
-  }
-  return coordenadas;
+// Declaramos las variables necesarias para controlar cada una de las piezas
+//son siete piezas y cada una se controla con tres variables:
+//La posición y el ángulo de rotación
+//Triángulo Grande 1:
+float angleTG1 =45;
+int posxTG1 = 100;
+int posyTG1 = 100;
+//Triángulo Grande 2:
+float angleTG2 = -45;
+int posxTG2 = 300;
+int posyTG2 = 200;
+//Cuadrado:
+float angleC = 0;
+int posxC = 100;
+int posyC = 0;
+//Triangulo Mediano:
+float angleTM = 0;
+int posxTM = 20;
+int posyTM = 250;
+//juanfer aprende a usar bien git 
+//Triangulo Pequeño 1:
+float angleTP1 = 0;
+int posxTP1 = 20;
+int posyTP1 = 20;
+//Triángulo Pequeño 2:
+float angleTP2 = 0;
+int posxTP2 = 200;
+int posyTP2 = 20;
+//Paralelogramo:
+float anglePl = 0;
+int posxPl = 300;
+int posyPl = 80;
+//almacenamiento figuras
+int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
+//Programación Triángulo Grande1
+void pintarTrianguloG1(){
+    if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        figuras[0][2]=figuras[0][2]+45;
+      }
+      if(key=='s'){
+        figuras[0][2]=figuras[0][2]-45;
+      }
+    }
+    if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[0][0] = mouseX;
+      figuras[0][1] = mouseY;
+    }
+  fill(210,50,60);
+  push();
+  translate(figuras[0][0],figuras[0][1]);
+  rotate(radians(figuras[0][2]));
+  triangle(-30,-30,70,-30,-30,70);
+  fill(200,45,65);
+  noStroke();
+  circle(0,0,20);
+  pop();
 }
-  
-
-void pintarTrianguloG1(int a,int b){
-  fill(150,213,120);
-  triangle(a-45,b-45,a+105,b-45,a-45,b+105);
-  float distancia = dist(a,b,mouseX,mouseY);
-  int[] nuevaUbicacion = moverPieza(distancia,a,b);
-  a = nuevaUbicacion[0];
-  b = nuevaUbicacion[1];
-}
+//Programación Triángulo Grande 2
 void pintarTrianguloG2(){
-  fill(80,190,253);
-  triangle(200,200,350,200,200,350);
+    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        figuras[1][2]=figuras[1][2]+45;;
+      }
+      if(key=='s'){
+        figuras[1][2]=figuras[1][2]-45;;
+      } 
+    }
+    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[1][0] = mouseX;
+      figuras[1][1] = mouseY;
+    }
+  fill(210,100,40);
+  push();
+  translate(figuras[1][0],figuras[1][1]);
+  rotate(radians(figuras[1][2]));
+  triangle(-30,-30,70,-30,-30,70);
+  fill(200,90,40);
+  noStroke();
+  circle(0,0,20);
+  pop();
 }
-void pintarTrianguloP1(){
-  fill(79,36,215);
-  triangle(0,200,70,200,0,270);
-}
-void pintarTrianguloP2(){
-  fill(56,186,201);
-  triangle(0,300,70,300,0,370);
-}
+//Programación Triángulo Mediano:
 void pintarTrianguloM(){
-  fill(250,180,200);
-  triangle(0,400,100,400,0,500);
+  if((dist(posxTM,posyTM,mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        angleTM = angleTM+0.049084;
+      }
+      if(key=='s'){
+        angleTM = angleTM-0.049084;
+      } 
+    }
+    if((dist(posxTM,posyTM,mouseX,mouseY)<20) && (mousePressed)){  
+    posxTM = mouseX;
+    posyTM = mouseY;
+
+  }
+  fill(160,80,40);
+  push();
+  translate(posxTM,posyTM);
+  rotate(angleTM);
+  triangle(-25,-25,45.71068,-25,-25,45.71068);
+  fill(150,90,50);
+  noStroke();
+  circle(0,0,20);
+  pop();
+  
 }
+
+//Programación Triángulo Pequeño1:
+void pintarTrianguloP1(){
+  if((dist(posxTP1,posyTP1,mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        angleTP1 = angleTP1+0.049084;
+      }
+      if(key=='s'){
+        angleTP1 = angleTP1-0.049084;
+      } 
+    }
+    if((dist(posxTP1,posyTP1,mouseX,mouseY)<20) && (mousePressed)){  
+    posxTP1 = mouseX;
+    posyTP1 = mouseY;
+
+  }
+  fill(10,250,40);
+  push();
+  translate(posxTP1,posyTP1);
+  rotate(angleTP1);
+  triangle(-15,-15,35,-15,-15,35);
+  fill(20,240,50);
+  noStroke();
+  circle(0,0,20);
+  pop();
+  
+}
+
+//Programación Triángulo Pequeño 2:
+void pintarTrianguloP2(){
+  if((dist(posxTP2,posyTP2,mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        angleTP2 = angleTP2+0.049084;
+      }
+      if(key=='s'){
+        angleTP2 = angleTP2-0.049084;
+      } 
+    }
+    if((dist(posxTP2,posyTP2,mouseX,mouseY)<20) && (mousePressed)){  
+    posxTP2 = mouseX;
+    posyTP2 = mouseY;
+
+  }
+  fill(10,100,40);
+  push();
+  translate(posxTP2,posyTP2);
+  rotate(angleTP2);
+  triangle(-15,-15,35,-15,-15,35);
+  fill(20,80,50);
+  noStroke();
+  circle(0,0,20);
+  pop();
+  
+}
+
+//Programación Cuadrado:
 void pintarCuadrado(){
-  fill(50,250,190);
-  rect(200,0,70,70);
+    if((dist(posxC,posyC,mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        angleC = angleC+0.049084;
+      }
+      if(key=='s'){
+        angleC = angleC-0.049084;
+      } 
+    }
+    if((dist(posxC,posyC,mouseX,mouseY)<20) && (mousePressed)){  
+    posxC = mouseX;
+    posyC = mouseY;
+
+  }
+  fill(50,100,40);
+  push();
+  translate(posxC,posyC);
+  rotate(angleC);
+  rect(-25,-25,50,50);
+  fill(40,90,50);
+  noStroke();
+  circle(0,0,20);
+  pop();
 }
+
+//Programación paralelogramo
 void pintarParalelogramo(){
-  fill(50,100,150);
-  quad(300,0,440,0,510,70,370,70);
+    if((dist(posxPl,posyPl,mouseX,mouseY)<20) && (keyPressed)){
+      if(key=='a'){
+        anglePl = anglePl+0.049084;
+      }
+      if(key=='s'){
+        anglePl = anglePl-0.049084;
+      } 
+    }
+    if((dist(posxPl,posyPl,mouseX,mouseY)<20) && (mousePressed)){  
+    posxPl = mouseX;
+    posyPl = mouseY;
+
+  }
+  fill(80,20,170);
+  push();
+  translate(posxPl,posyPl);
+  rotate(anglePl);
+  quad(-50,-25,0,-25,50,25,0,25);
+  fill(70,20,190);
+  noStroke();
+  circle(0,0,20);
+  pop();
 }
+
+
+//Método que pinta las piezas
+
 void pintarPiezas(){
-  int a = 0;
-  int b = 0;
-  pintarTrianguloG1(a,b);
+  pintarTrianguloG1();
   pintarTrianguloG2();
+  pintarTrianguloM();
   pintarTrianguloP1();
   pintarTrianguloP2();
-  pintarTrianguloM();
   pintarCuadrado();
   pintarParalelogramo();
-  fill(255,255,250);
-  circle(a,b,50);
 }
-
 void setup(){
-  size(500,700,P2D);
+  size(400,300,P2D);
 }
-
 void draw(){
-  background(215,120,63);
+  background(100,220,60);
   pintarPiezas();
 }
