@@ -49,7 +49,7 @@ void pintarTrianguloG1(){
   fill(210,50,60);
   push();
   translate(figuras[0][0],figuras[0][1]);
-  rotate(figuras[0][2]);
+  rotate(radians(figuras[0][2]));
   triangle(-30,-30,70,-30,-30,70);
   fill(200,45,65);
   noStroke();
@@ -58,7 +58,7 @@ void pintarTrianguloG1(){
 }
 //Programación Triángulo Grande 2
 void pintarTrianguloG2(){
-    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20)<20) && (keyPressed)){
+    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
         figuras[1][2]=figuras[1][2]+45;;
       }
@@ -73,7 +73,7 @@ void pintarTrianguloG2(){
   fill(210,100,40);
   push();
   translate(figuras[1][0],figuras[1][1]);
-  rotate(figuras[1][2]);
+  rotate(radians(figuras[1][2]));
   triangle(-30,-30,70,-30,-30,70);
   fill(200,90,40);
   noStroke();
