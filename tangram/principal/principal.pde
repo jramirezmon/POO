@@ -106,7 +106,6 @@ void pintarTrianguloM(){
   pop();
   
 }
-
 //Programación Triángulo Pequeño1:
 void pintarTrianguloP1(){
   if((dist(posxTP1,posyTP1,mouseX,mouseY)<20) && (keyPressed)){
