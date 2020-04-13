@@ -142,7 +142,7 @@ void pintarCuadrado(){
     }
   fill(50,100,40);
   push();
-    translate(figuras[5][0],figuras[4][1]);
+    translate(figuras[5][0],figuras[5][1]);
     rotate(radians(figuras[5][2]));
     rect(-25,-25,50,50);
     fill(40,90,50);
