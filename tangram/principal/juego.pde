@@ -1,36 +1,7 @@
 // Declaramos las variables necesarias para controlar cada una de las piezas
 //son siete piezas y cada una se controla con tres variables:
 //La posición y el ángulo de rotación
-//Triángulo Grande 1:
-float angleTG1 =45;
-int posxTG1 = 100;
-int posyTG1 = 100;
-//Triángulo Grande 2:
-float angleTG2 = -45;
-int posxTG2 = 300;
-int posyTG2 = 200;
-//Cuadrado:
-float angleC = 0;
-int posxC = 100;
-int posyC = 0;
-//Triangulo Mediano:
-float angleTM = 0;
-int posxTM = 20;
-int posyTM = 250;
-//juanfer aprende a usar bien git 
-//Triangulo Pequeño 1:
-float angleTP1 = 0;
-int posxTP1 = 20;
-int posyTP1 = 20;
-//Triángulo Pequeño 2:
-float angleTP2 = 0;
-int posxTP2 = 200;
-int posyTP2 = 20;
-//Paralelogramo:
-float anglePl = 0;
-int posxPl = 300;
-int posyPl = 80;
-//almacenamiento figuras
+//[n][1]posx [n][2]posy [n][3]angulo
 int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
 //Programación Triángulo Grande1
 void pintarTrianguloG1(){
