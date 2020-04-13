@@ -5,10 +5,7 @@
 int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
 //Programación Triángulo Grande1
 PImage img;
-void setup() {
-  // Images must be in the "data" directory to load correctly
-  img = loadImage("caballo.png");
-}
+
 
 void pintarTrianguloG1(){
     if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (keyPressed)){
@@ -74,7 +71,7 @@ void pintarTrianguloM(){
   fill(160,80,40);
   push();
     translate(figuras[2][0],figuras[2][1]);
-    rotate(radians(figuras[2][2])));
+    rotate(radians(figuras[2][2]));
     triangle(-25,-25,45.71068,-25,-25,45.71068);
     fill(150,90,50);
     noStroke();
@@ -93,12 +90,12 @@ void pintarTrianguloP1(){
     }
     if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20) && (mousePressed)){  
       figuras[3][0]= mouseX;
-      figuras[3][1]= mouseY
+      figuras[3][1]= mouseY;
    }
   fill(10,250,40);
     push();
     translate(figuras[3][0],figuras[3][1]);
-    rotate(radians(figuras[3][2])));
+    rotate(radians(figuras[3][2]));
     triangle(-15,-15,35,-15,-15,35);
     fill(20,240,50);
     noStroke();
@@ -117,13 +114,13 @@ void pintarTrianguloP2(){
     }
     if((dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20) && (mousePressed)){  
       figuras[4][0]= mouseX;
-      figuras[4][1]= mouseY
+      figuras[4][1]= mouseY;
     }
-  }
+  
   fill(10,100,40);
   push();
     translate(figuras[4][0],figuras[4][1]);
-    rotate(radians(figuras[4][2])));
+    rotate(radians(figuras[4][2]));
     triangle(-15,-15,35,-15,-15,35);
     fill(20,80,50);
     noStroke();
@@ -143,12 +140,12 @@ void pintarCuadrado(){
     }
     if((dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20) && (mousePressed)){  
       figuras[5][0]= mouseX;
-      figuras[5][1]= mouseY
+      figuras[5][1]= mouseY;
     }
   fill(50,100,40);
   push();
     translate(figuras[5][0],figuras[4][1]);
-    rotate(radians(figuras[5][2])));
+    rotate(radians(figuras[5][2]));
     rect(-25,-25,50,50);
     fill(40,90,50);
     noStroke();
@@ -167,12 +164,12 @@ void pintarParalelogramo(){
     }
     if((dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20) && (mousePressed)){  
       figuras[6][0]= mouseX;
-      figuras[6][1]= mouseY
+      figuras[6][1]= mouseY;
     }
   fill(80,20,170);
   push();
     translate(figuras[6][0],figuras[6][1]);
-    rotate(radians(figuras[6][2])));
+    rotate(radians(figuras[6][2]));
     quad(-50,-25,0,-25,50,25,0,25);
     fill(70,20,190);
     noStroke();
@@ -190,6 +187,7 @@ void pintarPiezas(){
   pintarParalelogramo();
 }
 void setup(){
+   img = loadImage("caballo.png");
   size(400,300,P2D);
 }
 void draw(){
