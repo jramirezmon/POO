@@ -72,87 +72,81 @@ void pintarTrianguloG2(){
     }
   fill(210,100,40);
   push();
-  translate(figuras[1][0],figuras[1][1]);
-  rotate(radians(figuras[1][2]));
-  triangle(-30,-30,70,-30,-30,70);
-  fill(200,90,40);
-  noStroke();
-  circle(0,0,20);
+    translate(figuras[1][0],figuras[1][1]);
+    rotate(radians(figuras[1][2]));
+    triangle(-30,-30,70,-30,-30,70);
+    fill(200,90,40);
+    noStroke();
+    circle(0,0,20);
   pop();
 }
 //Programación Triángulo Mediano:
 void pintarTrianguloM(){
-  if((dist(posxTM,posyTM,mouseX,mouseY)<20) && (keyPressed)){
+  if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        angleTM = angleTM+0.049084;
+        figuras[2][2]= figuras[2][2]+45;
       }
       if(key=='s'){
-        angleTM = angleTM-0.049084;
+        figuras[2][2]= figuras[2][2]-45;
       } 
     }
-    if((dist(posxTM,posyTM,mouseX,mouseY)<20) && (mousePressed)){  
-    posxTM = mouseX;
-    posyTM = mouseY;
-
-  }
+    if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[2][0]= mouseX;
+      figuras[2][1]= mouseY;
+    }
   fill(160,80,40);
   push();
-  translate(posxTM,posyTM);
-  rotate(angleTM);
-  triangle(-25,-25,45.71068,-25,-25,45.71068);
-  fill(150,90,50);
-  noStroke();
-  circle(0,0,20);
+    translate(figuras[2][0],figuras[2][1]);
+    rotate(radians(figuras[2][2])));
+    triangle(-25,-25,45.71068,-25,-25,45.71068);
+    fill(150,90,50);
+    noStroke();
+    circle(0,0,20);
   pop();
-  
 }
-
 //Programación Triángulo Pequeño1:
 void pintarTrianguloP1(){
-  if((dist(posxTP1,posyTP1,mouseX,mouseY)<20) && (keyPressed)){
+  if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        angleTP1 = angleTP1+0.049084;
+        figuras[3][2]= figuras[3][2]+45;
       }
       if(key=='s'){
-        angleTP1 = angleTP1-0.049084;
+        figuras[3][2]= figuras[3][2]-45;
       } 
     }
-    if((dist(posxTP1,posyTP1,mouseX,mouseY)<20) && (mousePressed)){  
-    posxTP1 = mouseX;
-    posyTP1 = mouseY;
-
-  }
+    if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[3][0]= mouseX;
+      figuras[3][1]= mouseY
+   }
   fill(10,250,40);
-  push();
-  translate(posxTP1,posyTP1);
-  rotate(angleTP1);
-  triangle(-15,-15,35,-15,-15,35);
-  fill(20,240,50);
-  noStroke();
-  circle(0,0,20);
+    push();
+    translate(figuras[3][0],figuras[3][1]);
+    rotate(radians(figuras[3][2])));
+    triangle(-15,-15,35,-15,-15,35);
+    fill(20,240,50);
+    noStroke();
+    circle(0,0,20);
   pop();
-  
 }
-
 //Programación Triángulo Pequeño 2:
 void pintarTrianguloP2(){
-  if((dist(posxTP2,posyTP2,mouseX,mouseY)<20) && (keyPressed)){
+  if((dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        angleTP2 = angleTP2+0.049084;
+        figuras[4][2]= figuras[4][2]+45;
       }
       if(key=='s'){
-        angleTP2 = angleTP2-0.049084;
+        figuras[4][2]= figuras[4][2]-45;
       } 
     }
-    if((dist(posxTP2,posyTP2,mouseX,mouseY)<20) && (mousePressed)){  
-    posxTP2 = mouseX;
-    posyTP2 = mouseY;
-
+    if((dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[4][0]= mouseX;
+      figuras[4][1]= mouseY
+    }
   }
   fill(10,100,40);
   push();
-  translate(posxTP2,posyTP2);
-  rotate(angleTP2);
+  translate(figuras[4][0],figuras[4][1]);
+  rotate(radians(figuras[4][2])));
   triangle(-15,-15,35,-15,-15,35);
   fill(20,80,50);
   noStroke();
