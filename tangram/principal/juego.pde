@@ -171,12 +171,12 @@ void pintarCuadrado(){
     }
   fill(50,100,40);
   push();
-  translate(figuras[5][0],figuras[4][1]);
-  rotate(radians(figuras[5][2])));
-  rect(-25,-25,50,50);
-  fill(40,90,50);
-  noStroke();
-  circle(0,0,20);
+    translate(figuras[5][0],figuras[4][1]);
+    rotate(radians(figuras[5][2])));
+    rect(-25,-25,50,50);
+    fill(40,90,50);
+    noStroke();
+    circle(0,0,20);
   pop();
 }
 
@@ -196,16 +196,14 @@ void pintarParalelogramo(){
     }
   fill(80,20,170);
   push();
-  translate(figuras[6][0],figuras[6][1]);
-  rotate(radians(figuras[6][2])));
-  quad(-50,-25,0,-25,50,25,0,25);
-  fill(70,20,190);
-  noStroke();
-  circle(0,0,20);
+    translate(figuras[6][0],figuras[6][1]);
+    rotate(radians(figuras[6][2])));
+    quad(-50,-25,0,-25,50,25,0,25);
+    fill(70,20,190);
+    noStroke();
+    circle(0,0,20);
   pop();
 }
-
-
 //Método que pinta las piezas
 
 void pintarPiezas(){
