@@ -4,6 +4,12 @@
 //[n][1]posx [n][2]posy [n][3]angulo
 int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
 //Programación Triángulo Grande1
+PImage img;
+void setup() {
+  // Images must be in the "data" directory to load correctly
+  img = loadImage("caballo.png");
+}
+
 void pintarTrianguloG1(){
     if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
@@ -188,5 +194,6 @@ void setup(){
 }
 void draw(){
   background(100,220,60);
+  image(img, 0, 0);
   pintarPiezas();
 }
