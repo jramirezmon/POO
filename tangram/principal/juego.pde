@@ -36,10 +36,10 @@ int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{2
 void pintarTrianguloG1(){
     if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        figuras[0][2]=figuras[0][2]+45;
+        figuras[0][2]=figuras[0][2]+5;
       }
       if(key=='s'){
-        figuras[0][2]=figuras[0][2]-45;
+        figuras[0][2]=figuras[0][2]-5;
       }
     }
     if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (mousePressed)){  
@@ -60,10 +60,10 @@ void pintarTrianguloG1(){
 void pintarTrianguloG2(){
     if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        figuras[1][2]=figuras[1][2]+45;;
+        figuras[1][2]=figuras[1][2]+5;;
       }
       if(key=='s'){
-        figuras[1][2]=figuras[1][2]-45;;
+        figuras[1][2]=figuras[1][2]-5;;
       } 
     }
     if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20) && (mousePressed)){  
@@ -84,10 +84,10 @@ void pintarTrianguloG2(){
 void pintarTrianguloM(){
   if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        figuras[2][2]= figuras[2][2]+45;
+        figuras[2][2]= figuras[2][2]+5;
       }
       if(key=='s'){
-        figuras[2][2]= figuras[2][2]-45;
+        figuras[2][2]= figuras[2][2]-5;
       } 
     }
     if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20) && (mousePressed)){  
@@ -108,10 +108,10 @@ void pintarTrianguloM(){
 void pintarTrianguloP1(){
   if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        figuras[3][2]= figuras[3][2]+45;
+        figuras[3][2]= figuras[3][2]+5;
       }
       if(key=='s'){
-        figuras[3][2]= figuras[3][2]-45;
+        figuras[3][2]= figuras[3][2]-5;
       } 
     }
     if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20) && (mousePressed)){  
@@ -132,10 +132,10 @@ void pintarTrianguloP1(){
 void pintarTrianguloP2(){
   if((dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        figuras[4][2]= figuras[4][2]+45;
+        figuras[4][2]= figuras[4][2]+5;
       }
       if(key=='s'){
-        figuras[4][2]= figuras[4][2]-45;
+        figuras[4][2]= figuras[4][2]-5;
       } 
     }
     if((dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20) && (mousePressed)){  
@@ -145,35 +145,34 @@ void pintarTrianguloP2(){
   }
   fill(10,100,40);
   push();
-  translate(figuras[4][0],figuras[4][1]);
-  rotate(radians(figuras[4][2])));
-  triangle(-15,-15,35,-15,-15,35);
-  fill(20,80,50);
-  noStroke();
-  circle(0,0,20);
+    translate(figuras[4][0],figuras[4][1]);
+    rotate(radians(figuras[4][2])));
+    triangle(-15,-15,35,-15,-15,35);
+    fill(20,80,50);
+    noStroke();
+    circle(0,0,20);
   pop();
   
 }
 
 //Programación Cuadrado:
 void pintarCuadrado(){
-    if((dist(posxC,posyC,mouseX,mouseY)<20) && (keyPressed)){
+  if((dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        angleC = angleC+0.049084;
+        figuras[5][2]= figuras[5][2]+5;
       }
       if(key=='s'){
-        angleC = angleC-0.049084;
+        figuras[5][2]= figuras[5][2]-5;
       } 
     }
-    if((dist(posxC,posyC,mouseX,mouseY)<20) && (mousePressed)){  
-    posxC = mouseX;
-    posyC = mouseY;
-
-  }
+    if((dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[5][0]= mouseX;
+      figuras[5][1]= mouseY
+    }
   fill(50,100,40);
   push();
-  translate(posxC,posyC);
-  rotate(angleC);
+  translate(figuras[5][0],figuras[4][1]);
+  rotate(radians(figuras[5][2])));
   rect(-25,-25,50,50);
   fill(40,90,50);
   noStroke();
@@ -183,23 +182,22 @@ void pintarCuadrado(){
 
 //Programación paralelogramo
 void pintarParalelogramo(){
-    if((dist(posxPl,posyPl,mouseX,mouseY)<20) && (keyPressed)){
+      if((dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
-        anglePl = anglePl+0.049084;
+        figuras[6][2]= figuras[6][2]+5;
       }
       if(key=='s'){
-        anglePl = anglePl-0.049084;
+        figuras[6][2]= figuras[6][2]-5;
       } 
     }
-    if((dist(posxPl,posyPl,mouseX,mouseY)<20) && (mousePressed)){  
-    posxPl = mouseX;
-    posyPl = mouseY;
-
-  }
+    if((dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20) && (mousePressed)){  
+      figuras[6][0]= mouseX;
+      figuras[6][1]= mouseY
+    }
   fill(80,20,170);
   push();
-  translate(posxPl,posyPl);
-  rotate(anglePl);
+  translate(figuras[6][0],figuras[6][1]);
+  rotate(radians(figuras[6][2])));
   quad(-50,-25,0,-25,50,25,0,25);
   fill(70,20,190);
   noStroke();
