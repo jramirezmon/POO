@@ -125,7 +125,6 @@ void pintarTrianguloP2(){
   pop();
   
 }
-
 //Programación Cuadrado:
 void pintarCuadrado(){
   if((dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20) && (keyPressed)){
@@ -150,7 +149,6 @@ void pintarCuadrado(){
     circle(0,0,20);
   pop();
 }
-
 //Programación paralelogramo
 void pintarParalelogramo(){
       if((dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20) && (keyPressed)){
@@ -176,7 +174,6 @@ void pintarParalelogramo(){
   pop();
 }
 //Método que pinta las piezas
-
 void pintarPiezas(){
   pintarTrianguloG1();
   pintarTrianguloG2();
