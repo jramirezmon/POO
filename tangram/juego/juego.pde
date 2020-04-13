@@ -185,11 +185,11 @@ void pintarPiezas(){
   pintarParalelogramo();
 }
 void setup(){
-   img = loadImage("caballo.png");
+   img = loadImage("pato.png");
   size(400,300,P2D);
 }
 void draw(){
   background(100,220,60);
-  image(img, 0, 0,width, height);
+  image(img, 0, 0,3*width/4, 3*height/4);
   pintarPiezas();
 }
