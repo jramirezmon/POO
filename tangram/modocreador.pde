@@ -3,7 +3,6 @@
 //La posición y el ángulo de rotación
 //[n][1]posx [n][2]posy [n][3]angulo
 int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
-PImage img;
 boolean guardar = true;
 boolean drawGrid = true;
 //Programación Triángulo Grande1
@@ -211,16 +210,16 @@ void keyPressed() {
   }
 }
 void setup(){
-   img = loadImage("pato.png");
   size(800,800,P2D);
+
 }
 int contador = 2;
+String a = "AAA";
 void draw(){
    color blanco = color(255,255,255);
     color negro = color(0,0,0);
  if(guardar||contador != 0){
    background(255,255,255);
-    image(img, 100,100);
      if (drawGrid){
         drawGrid(10);
      }
@@ -230,13 +229,19 @@ void draw(){
   }
   }
  if(guardar==false && contador==0){
-  loadPixels();
+  for ( int f = 0; f < 2; f++ ) {
+   loadPixels();
   for ( int i = 0; i < (width*height); i++ ) {
     color ddd =color(pixels[i]);
     if( blanco != ddd ){
       pixels[i]=  negro;
     }
   } 	
-  updatePixels();
+  updatePixels();   
+PImage newImage = createImage(100,100, RGB);
+newImage = get();
+newImage.save(a +".jpg");
  }
+ 
+}
 }
