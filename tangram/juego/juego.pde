@@ -3,8 +3,10 @@
 //La posición y el ángulo de rotación
 //[n][1]posx [n][2]posy [n][3]angulo
 int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
-//Programación Triángulo Grande1
 PImage img;
+boolean gano = true;
+boolean drawGrid = true;
+//Programación Triángulo Grande1
 void pintarTrianguloG1(){
     if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (keyPressed)){
       if(key=='a'){
@@ -184,16 +186,37 @@ void pintarPiezas(){
   pintarCuadrado();
   pintarParalelogramo();
 }
-boolean gano = true;
+void drawGrid(float scale) {
+  push();
+  strokeWeight(1);
+  int i;
+  for (i=0; i<=width/scale; i++) {
+    stroke(20, 20, 20, 20);
+    line(i*scale, 0, i*scale, height);
+  }
+  for (i=0; i<=height/scale; i++) {
+    stroke(20, 20, 20, 20);
+    line(0, i*scale, width, i*scale);
+  }
+  pop();
+}
+//dibjar grid si o no
+void keyPressed() {
+  if (key == 'g' || key == 'G')
+    drawGrid = !drawGrid;
+}
 void setup(){
    img = loadImage("pato.png");
-  size(400,400,P2D);
+  size(800,800,P2D);
 }
 void draw(){
  if(gano){
    color negro = color(0,0,0);
    background(255,255,255);
-   image(img, 100,100);
+    image(img, 100,100);
+     if (drawGrid){
+        drawGrid(10);
+     }
    pintarPiezas();
    loadPixels();
    int contador = 0;
@@ -203,8 +226,6 @@ void draw(){
         contador++;
       }
    }
-   print(contador);
-   print("fffffffff");
    if(contador<2500){
       print("ganaste");
       gano = false;
