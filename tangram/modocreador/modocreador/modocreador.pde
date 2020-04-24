@@ -211,7 +211,6 @@ void keyPressed() {
 }
 void setup(){
   size(800,800,P2D);
-
 }
 int contador = 2;
 String a = "AAA";
