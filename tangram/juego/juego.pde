@@ -186,6 +186,36 @@ void pintarPiezas(){
   pintarCuadrado();
   pintarParalelogramo();
 }
+
+//Método que evalúa la condición de victoria del juego en general
+//Aquí se encuentra alojado el método de pintar las piezas, para que cuando acabe el juego no se pinten más veces.
+void condicionDeVictoria(boolean ganar, boolean dibujar ){
+  if (dibujar){
+    if(ganar){
+     color negro = color(0,0,0);
+     background(255,255,255);
+      image(img, 100,100);
+       if (drawGrid){
+          drawGrid(10);
+       }
+     pintarPiezas();
+     loadPixels();
+     int contador = 0;
+     for ( int i = 0; i < (width*height); i++ ) {
+      color ddd =color(pixels[i]);
+        if(negro==ddd && gano){
+          contador++;
+        }
+     }
+     if(contador<2500){
+        print("ganaste");
+        gano = false;
+    }
+   }
+  }
+}
+//Método que dibuja la rejilla que se encuentra al fondo, con posibilidad de ocultarla presionando la tecla 'g'
+
 void drawGrid(float scale) {
   push();
   strokeWeight(1);
@@ -200,35 +230,19 @@ void drawGrid(float scale) {
   }
   pop();
 }
-//dibjar grid si o no
+//Ocultar o dibujar la rejilla
 void keyPressed() {
   if (key == 'g' || key == 'G')
     drawGrid = !drawGrid;
 }
+
+
 void setup(){
    img = loadImage("pato.png");
+   titulo = loadImage("Titulo.png");
   size(800,600,P2D);
 }
+
 void draw(){
- if(gano){
-   color negro = color(0,0,0);
-   background(255,255,255);
-    image(img, 100,100);
-     if (drawGrid){
-        drawGrid(10);
-     }
-   pintarPiezas();
-   loadPixels();
-   int contador = 0;
-   for ( int i = 0; i < (width*height); i++ ) {
-    color ddd =color(pixels[i]);
-      if(negro==ddd && gano){
-        contador++;
-      }
-   }
-   if(contador<2500){
-      print("ganaste");
-      gano = false;
-  }
- }
+  condicionDeVictoria(gano, menu());
 }
