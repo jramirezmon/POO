@@ -20,12 +20,12 @@ void pintarTrianguloG1(){
       figuras[0][0] = mouseX;
       figuras[0][1] = mouseY;
     }
-  fill(210,50,60);
+  fill(245,69,10);
   push();
   translate(figuras[0][0],figuras[0][1]);
   rotate(radians(figuras[0][2]));
   triangle(-30,-30,70,-30,-30,70);
-  fill(200,45,65);
+  fill(121,85,72);
   noStroke();
   circle(0,0,20);
   pop();
@@ -44,12 +44,12 @@ void pintarTrianguloG2(){
       figuras[1][0] = mouseX;
       figuras[1][1] = mouseY;
     }
-  fill(210,100,40);
+  fill(128,0,128);
   push();
     translate(figuras[1][0],figuras[1][1]);
     rotate(radians(figuras[1][2]));
     triangle(-30,-30,70,-30,-30,70);
-    fill(200,90,40);
+    fill(121,85,72);
     noStroke();
     circle(0,0,20);
   pop();
@@ -68,12 +68,12 @@ void pintarTrianguloM(){
       figuras[2][0]= mouseX;
       figuras[2][1]= mouseY;
     }
-  fill(160,80,40);
+  fill(124,252,0);
   push();
     translate(figuras[2][0],figuras[2][1]);
     rotate(radians(figuras[2][2]));
     triangle(-25,-25,45.71068,-25,-25,45.71068);
-    fill(150,90,50);
+    fill(121,85,72);
     noStroke();
     circle(0,0,20);
   pop();
@@ -92,12 +92,12 @@ void pintarTrianguloP1(){
       figuras[3][0]= mouseX;
       figuras[3][1]= mouseY;
    }
-  fill(10,250,40);
+  fill(255,193,13);
     push();
     translate(figuras[3][0],figuras[3][1]);
     rotate(radians(figuras[3][2]));
     triangle(-15,-15,35,-15,-15,35);
-    fill(20,240,50);
+    fill(121,85,72);
     noStroke();
     circle(0,0,20);
   pop();
@@ -117,12 +117,12 @@ void pintarTrianguloP2(){
       figuras[4][1]= mouseY;
     }
   
-  fill(10,100,40);
+  fill(3,169,244);
   push();
     translate(figuras[4][0],figuras[4][1]);
     rotate(radians(figuras[4][2]));
     triangle(-15,-15,35,-15,-15,35);
-    fill(20,80,50);
+    fill(121,85,72);
     noStroke();
     circle(0,0,20);
   pop();
@@ -142,12 +142,12 @@ void pintarCuadrado(){
       figuras[5][0]= mouseX;
       figuras[5][1]= mouseY;
     }
-  fill(50,100,40);
+  fill(10,0,205);
   push();
     translate(figuras[5][0],figuras[5][1]);
     rotate(radians(figuras[5][2]));
     rect(-25,-25,50,50);
-    fill(40,90,50);
+    fill(121,85,72);
     noStroke();
     circle(0,0,20);
   pop();
@@ -162,19 +162,33 @@ void pintarParalelogramo(){
         figuras[6][2]= figuras[6][2]-1;
       } 
     }
-    if((dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20) && (mousePressed)){  
-      figuras[6][0]= mouseX;
-      figuras[6][1]= mouseY;
+    if(dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20){  
+      if(mousePressed){
+        figuras[6][0]= mouseX;
+        figuras[6][1]= mouseY;
+      }
+        fill(216,27,96);
+        push();
+          translate(figuras[6][0],figuras[6][1]);
+          rotate(radians(figuras[6][2]));
+          quad(-50,-25,0,-25,50,25,0,25);
+          fill(121,85,72);
+          stroke(188,170,164);
+          strokeWeight(0.8);
+          circle(0,0,20);
+        pop();
     }
-  fill(80,20,170);
-  push();
-    translate(figuras[6][0],figuras[6][1]);
-    rotate(radians(figuras[6][2]));
-    quad(-50,-25,0,-25,50,25,0,25);
-    fill(70,20,190);
-    noStroke();
-    circle(0,0,20);
-  pop();
+    else{
+    fill(216,27,96);
+    push();
+      translate(figuras[6][0],figuras[6][1]);
+      rotate(radians(figuras[6][2]));
+      quad(-50,-25,0,-25,50,25,0,25);
+      fill(121,85,72);
+      noStroke();
+      circle(0,0,20);
+    pop();
+    }
 }
 //Método que pinta las piezas
 void pintarPiezas(){
@@ -244,5 +258,6 @@ void setup(){
 }
 
 void draw(){
+  noStroke();
   condicionDeVictoria(gano, menu());
 }
