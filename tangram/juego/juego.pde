@@ -1,7 +1,7 @@
 // Declaramos las variables necesarias para controlar cada una de las piezas
 //son siete piezas y cada una se controla con tres variables:
 //La posición y el ángulo de rotación
-//[n][1]posx [n][2]posy [n][3]angulo
+//[n][1]=posx [n][2]=posy [n][3]=angulo
 int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
 PImage img;
 boolean gano = true;
@@ -207,7 +207,7 @@ void keyPressed() {
 }
 void setup(){
    img = loadImage("pato.png");
-  size(800,800,P2D);
+  size(800,600,P2D);
 }
 void draw(){
  if(gano){
