@@ -18,7 +18,9 @@ void pintarTrianguloG1(){
       }
     }
     if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20)){
-      escogida[0] = true;
+      if(escogida[1] == false && escogida[2] == false && escogida[3] == false && escogida[4] == false && escogida[5] == false && escogida[6] == false ){
+        escogida[0] = true;
+      }
       for(int i = 1;i == 6;i++){
         escogida[i] = false;
       }
@@ -61,7 +63,9 @@ void pintarTrianguloG2(){
       } 
     }
     if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20)){
-      escogida[1] = true;
+      if(escogida[0] == false && escogida[2] == false && escogida[3] == false && escogida[4] == false && escogida[5] == false && escogida[6] == false ){
+        escogida[1] = true;
+      }
       for(int i = 2;i == 6;i++){
         escogida[i] = false;
       }
@@ -81,6 +85,7 @@ void pintarTrianguloG2(){
       pop();
     }
     else{
+      escogida[1] = false;
       fill(128,0,128);
       push();
         translate(figuras[1][0],figuras[1][1]);
@@ -103,7 +108,9 @@ void pintarTrianguloM(){
       } 
     }
     if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20)){
-      escogida[2] = true;
+      if(escogida[0] == false && escogida[1] == false && escogida[3] == false && escogida[4] == false && escogida[5] == false && escogida[6] == false ){
+        escogida[2] = true;
+      }
       for(int i = 3;i == 6;i++){
         escogida[i] = false;
       }
@@ -123,6 +130,7 @@ void pintarTrianguloM(){
       pop();
     }
     else{
+      escogida[2] = false;
       fill(124,252,0);
       push();
         translate(figuras[2][0],figuras[2][1]);
@@ -145,7 +153,9 @@ void pintarTrianguloP1(){
       } 
     }
     if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20)){
-      escogida[3] = true;
+      if(escogida[0] == false && escogida[1] == false && escogida[2] == false && escogida[4] == false && escogida[5] == false && escogida[6] == false ){
+        escogida[3] = true;
+      }
       for(int i = 4;i == 6;i++){
         escogida[i] = false;
       }
@@ -165,6 +175,7 @@ void pintarTrianguloP1(){
       pop();
    }
    else{
+     escogida[3] = false;
       fill(255,193,13);
       push();
         translate(figuras[3][0],figuras[3][1]);
@@ -187,7 +198,9 @@ void pintarTrianguloP2(){
       } 
     }
     if(dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20){
-      escogida[4] = true;
+      if(escogida[0] == false && escogida[1] == false && escogida[2] == false && escogida[3] == false && escogida[5] == false && escogida[6] == false ){
+        escogida[4] = true;
+      }
       for(int i = 5;i == 6;i++){
         escogida[i] = false;
       }
@@ -207,6 +220,7 @@ void pintarTrianguloP2(){
       pop();
     }
     else{
+      escogida[4] = false;
        fill(3,169,244);
        push();
          translate(figuras[4][0],figuras[4][1]);
@@ -228,8 +242,10 @@ void pintarCuadrado(){
         figuras[5][2]= figuras[5][2]-1;
       } 
     }
-    if(dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20){ 
-      escogida[5] = true;
+    if(dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20){
+      if(escogida[0] == false && escogida[1] == false && escogida[2] == false && escogida[3] == false && escogida[4] == false && escogida[6] == false ){
+        escogida[5] = true;
+      }
       escogida[6] = false;
       if((mousePressed) && (escogida[5] == true)){
       figuras[5][0]= mouseX;
@@ -247,6 +263,7 @@ void pintarCuadrado(){
       pop();
     }
     else{
+    escogida[5] = false;
     fill(10,0,205);
     push();
       translate(figuras[5][0],figuras[5][1]);
@@ -269,7 +286,9 @@ void pintarParalelogramo(){
       } 
     }
     if(dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20){  
-      escogida[6] = true;
+      if(escogida[0] == false && escogida[1] == false && escogida[2] == false && escogida[3] == false && escogida[4] == false && escogida[5] == false ){
+        escogida[6] = true;
+      }
       if((mousePressed) && (escogida[6] == true)){
         figuras[6][0]= mouseX;
         figuras[6][1]= mouseY;
@@ -286,6 +305,7 @@ void pintarParalelogramo(){
         pop();
     }
     else{
+    escogida[6] = false;
     fill(216,27,96);
     push();
       translate(figuras[6][0],figuras[6][1]);
@@ -299,13 +319,13 @@ void pintarParalelogramo(){
 }
 //Método que pinta las piezas
 void pintarPiezas(){
-  pintarTrianguloG1();
-  pintarTrianguloG2();
-  pintarTrianguloM();
-  pintarTrianguloP1();
-  pintarTrianguloP2();
-  pintarCuadrado();
   pintarParalelogramo();
+  pintarCuadrado();
+  pintarTrianguloP2();
+  pintarTrianguloP1();
+  pintarTrianguloM();
+  pintarTrianguloG2();
+  pintarTrianguloG1();
 }
 
 //Método que evalúa la condición de victoria del juego en general
@@ -328,7 +348,7 @@ void condicionDeVictoria(boolean ganar, boolean dibujar ){
           contador++;
         }
      }
-     if(contador<2500){
+     if(contador<3000){
         print("ganaste");
         gano = false;
     }
