@@ -3,6 +3,7 @@
 //La posición y el ángulo de rotación
 //[n][1]=posx [n][2]=posy [n][3]=angulo
 int [][] figuras = {{569,262,45},{612,220,-45},{527,176,0},{514,254,136},{571,198,-135},{536,220,-45},{589,167,-45}};
+boolean [] escogida = {false,false,false,false,false,false,false};
 PImage img;
 boolean gano = true;
 boolean drawGrid = true;
@@ -16,8 +17,12 @@ void pintarTrianguloG1(){
         figuras[0][2]=figuras[0][2]-1;
       }
     }
-    if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20)){  
-      if(mousePressed){
+    if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20)){
+      escogida[0] = true;
+      for(int i = 1;i == 6;i++){
+        escogida[i] = false;
+      }
+      if((mousePressed) && (escogida[0] == true)){
       figuras[0][0] = mouseX;
       figuras[0][1] = mouseY;
       }
@@ -33,6 +38,7 @@ void pintarTrianguloG1(){
       pop();
     }
     else{
+      escogida[0] = false;
       fill(245,69,10);
       push();
         translate(figuras[0][0],figuras[0][1]);
@@ -54,8 +60,12 @@ void pintarTrianguloG2(){
         figuras[1][2]=figuras[1][2]-1;;
       } 
     }
-    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20)){  
-      if(mousePressed){
+    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20)){
+      escogida[1] = true;
+      for(int i = 2;i == 6;i++){
+        escogida[i] = false;
+      }
+      if((mousePressed) && (escogida[1] == true)){
       figuras[1][0] = mouseX;
       figuras[1][1] = mouseY;
       }
@@ -92,8 +102,12 @@ void pintarTrianguloM(){
         figuras[2][2]= figuras[2][2]-1;
       } 
     }
-    if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20)){  
-      if(mousePressed){
+    if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20)){
+      escogida[2] = true;
+      for(int i = 3;i == 6;i++){
+        escogida[i] = false;
+      }
+      if((mousePressed) && (escogida[2] == true)){
       figuras[2][0]= mouseX;
       figuras[2][1]= mouseY;
       }
@@ -130,8 +144,12 @@ void pintarTrianguloP1(){
         figuras[3][2]= figuras[3][2]-1;
       } 
     }
-    if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20)){  
-      if(mousePressed){
+    if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20)){
+      escogida[3] = true;
+      for(int i = 4;i == 6;i++){
+        escogida[i] = false;
+      }
+      if((mousePressed) && (escogida[3] == true)){
       figuras[3][0]= mouseX;
       figuras[3][1]= mouseY;
       }
@@ -168,8 +186,12 @@ void pintarTrianguloP2(){
         figuras[4][2]= figuras[4][2]-1;
       } 
     }
-    if(dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20){  
-      if(mousePressed){
+    if(dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20){
+      escogida[4] = true;
+      for(int i = 5;i == 6;i++){
+        escogida[i] = false;
+      }
+      if((mousePressed) && (escogida[4] == true)){
       figuras[4][0]= mouseX;
       figuras[4][1]= mouseY;
       }
@@ -206,8 +228,10 @@ void pintarCuadrado(){
         figuras[5][2]= figuras[5][2]-1;
       } 
     }
-    if(dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20){  
-      if(mousePressed){
+    if(dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20){ 
+      escogida[5] = true;
+      escogida[6] = false;
+      if((mousePressed) && (escogida[5] == true)){
       figuras[5][0]= mouseX;
       figuras[5][1]= mouseY;
       }
@@ -245,7 +269,8 @@ void pintarParalelogramo(){
       } 
     }
     if(dist(figuras[6][0],figuras[6][1],mouseX,mouseY)<20){  
-      if(mousePressed){
+      escogida[6] = true;
+      if((mousePressed) && (escogida[6] == true)){
         figuras[6][0]= mouseX;
         figuras[6][1]= mouseY;
       }
