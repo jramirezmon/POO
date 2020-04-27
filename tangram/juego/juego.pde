@@ -2,7 +2,7 @@
 //son siete piezas y cada una se controla con tres variables:
 //La posición y el ángulo de rotación
 //[n][1]=posx [n][2]=posy [n][3]=angulo
-int [][] figuras = {{100,100,45},{300,200,-45},{100,0,0},{20,250,0},{20,20,0},{200,20,0},{300,80,0}};
+int [][] figuras = {{569,262,45},{612,220,-45},{527,176,0},{514,254,136},{571,198,-135},{536,220,-45},{589,167,-45}};
 PImage img;
 boolean gano = true;
 boolean drawGrid = true;
@@ -16,19 +16,33 @@ void pintarTrianguloG1(){
         figuras[0][2]=figuras[0][2]-1;
       }
     }
-    if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20) && (mousePressed)){  
+    if((dist(figuras[0][0],figuras[0][1],mouseX,mouseY)<20)){  
+      if(mousePressed){
       figuras[0][0] = mouseX;
       figuras[0][1] = mouseY;
+      }
+      fill(245,69,10);
+      push();
+        translate(figuras[0][0],figuras[0][1]);
+        rotate(radians(figuras[0][2]));
+        triangle(-30,-30,70,-30,-30,70);
+        fill(121,85,72);
+        stroke(188,170,164);
+        strokeWeight(0.8);
+        circle(0,0,20);
+      pop();
     }
-  fill(245,69,10);
-  push();
-  translate(figuras[0][0],figuras[0][1]);
-  rotate(radians(figuras[0][2]));
-  triangle(-30,-30,70,-30,-30,70);
-  fill(121,85,72);
-  noStroke();
-  circle(0,0,20);
-  pop();
+    else{
+      fill(245,69,10);
+      push();
+        translate(figuras[0][0],figuras[0][1]);
+        rotate(radians(figuras[0][2]));
+        triangle(-30,-30,70,-30,-30,70);
+        fill(121,85,72);
+        noStroke();
+        circle(0,0,20);
+      pop();
+    }
 }
 //Programación Triángulo Grande 2
 void pintarTrianguloG2(){
@@ -40,19 +54,33 @@ void pintarTrianguloG2(){
         figuras[1][2]=figuras[1][2]-1;;
       } 
     }
-    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20) && (mousePressed)){  
+    if((dist(figuras[1][0],figuras[1][1],mouseX,mouseY)<20)){  
+      if(mousePressed){
       figuras[1][0] = mouseX;
       figuras[1][1] = mouseY;
+      }
+      fill(128,0,128);
+      push();
+        translate(figuras[1][0],figuras[1][1]);
+        rotate(radians(figuras[1][2]));
+        triangle(-30,-30,70,-30,-30,70);
+        fill(121,85,72);
+        stroke(188,170,164);
+        strokeWeight(0.8);
+        circle(0,0,20);
+      pop();
     }
-  fill(128,0,128);
-  push();
-    translate(figuras[1][0],figuras[1][1]);
-    rotate(radians(figuras[1][2]));
-    triangle(-30,-30,70,-30,-30,70);
-    fill(121,85,72);
-    noStroke();
-    circle(0,0,20);
-  pop();
+    else{
+      fill(128,0,128);
+      push();
+        translate(figuras[1][0],figuras[1][1]);
+        rotate(radians(figuras[1][2]));
+        triangle(-30,-30,70,-30,-30,70);
+        fill(121,85,72);
+        noStroke();
+        circle(0,0,20);
+      pop();
+    }
 }
 //Programación Triángulo Mediano:
 void pintarTrianguloM(){
@@ -64,19 +92,33 @@ void pintarTrianguloM(){
         figuras[2][2]= figuras[2][2]-1;
       } 
     }
-    if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20) && (mousePressed)){  
+    if((dist(figuras[2][0],figuras[2][1],mouseX,mouseY)<20)){  
+      if(mousePressed){
       figuras[2][0]= mouseX;
       figuras[2][1]= mouseY;
+      }
+      fill(124,252,0);
+      push();
+        translate(figuras[2][0],figuras[2][1]);
+        rotate(radians(figuras[2][2]));
+        triangle(-25,-25,45.71068,-25,-25,45.71068);
+        fill(121,85,72);
+        stroke(188,170,164);
+        strokeWeight(0.8);
+        circle(0,0,20);
+      pop();
     }
-  fill(124,252,0);
-  push();
-    translate(figuras[2][0],figuras[2][1]);
-    rotate(radians(figuras[2][2]));
-    triangle(-25,-25,45.71068,-25,-25,45.71068);
-    fill(121,85,72);
-    noStroke();
-    circle(0,0,20);
-  pop();
+    else{
+      fill(124,252,0);
+      push();
+        translate(figuras[2][0],figuras[2][1]);
+        rotate(radians(figuras[2][2]));
+        triangle(-25,-25,45.71068,-25,-25,45.71068);
+        fill(121,85,72);
+        noStroke();
+        circle(0,0,20);
+      pop();
+    }
 }
 //Programación Triángulo Pequeño1:
 void pintarTrianguloP1(){
@@ -88,19 +130,33 @@ void pintarTrianguloP1(){
         figuras[3][2]= figuras[3][2]-1;
       } 
     }
-    if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20) && (mousePressed)){  
+    if((dist(figuras[3][0],figuras[3][1],mouseX,mouseY)<20)){  
+      if(mousePressed){
       figuras[3][0]= mouseX;
       figuras[3][1]= mouseY;
+      }
+      fill(255,193,13);
+      push();
+        translate(figuras[3][0],figuras[3][1]);
+        rotate(radians(figuras[3][2]));
+        triangle(-15,-15,35,-15,-15,35);
+        fill(121,85,72);
+        stroke(188,170,164);
+        strokeWeight(0.8);
+        circle(0,0,20);
+      pop();
    }
-  fill(255,193,13);
-    push();
-    translate(figuras[3][0],figuras[3][1]);
-    rotate(radians(figuras[3][2]));
-    triangle(-15,-15,35,-15,-15,35);
-    fill(121,85,72);
-    noStroke();
-    circle(0,0,20);
-  pop();
+   else{
+      fill(255,193,13);
+      push();
+        translate(figuras[3][0],figuras[3][1]);
+        rotate(radians(figuras[3][2]));
+        triangle(-15,-15,35,-15,-15,35);
+        fill(121,85,72);
+        noStroke();
+        circle(0,0,20);
+      pop();
+   }
 }
 //Programación Triángulo Pequeño 2:
 void pintarTrianguloP2(){
@@ -112,21 +168,33 @@ void pintarTrianguloP2(){
         figuras[4][2]= figuras[4][2]-1;
       } 
     }
-    if((dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20) && (mousePressed)){  
+    if(dist(figuras[4][0],figuras[4][1],mouseX,mouseY)<20){  
+      if(mousePressed){
       figuras[4][0]= mouseX;
       figuras[4][1]= mouseY;
+      }
+      fill(3,169,244);
+      push();
+        translate(figuras[4][0],figuras[4][1]);
+        rotate(radians(figuras[4][2]));
+        triangle(-15,-15,35,-15,-15,35);
+        fill(121,85,72);
+        stroke(188,170,164);
+        strokeWeight(0.8);
+        circle(0,0,20);
+      pop();
     }
-  
-  fill(3,169,244);
-  push();
-    translate(figuras[4][0],figuras[4][1]);
-    rotate(radians(figuras[4][2]));
-    triangle(-15,-15,35,-15,-15,35);
-    fill(121,85,72);
-    noStroke();
-    circle(0,0,20);
-  pop();
-  
+    else{
+       fill(3,169,244);
+       push();
+         translate(figuras[4][0],figuras[4][1]);
+         rotate(radians(figuras[4][2]));
+         triangle(-15,-15,35,-15,-15,35);
+         fill(121,85,72);
+         noStroke();
+         circle(0,0,20);
+       pop();
+    }
 }
 //Programación Cuadrado:
 void pintarCuadrado(){
@@ -138,19 +206,33 @@ void pintarCuadrado(){
         figuras[5][2]= figuras[5][2]-1;
       } 
     }
-    if((dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20) && (mousePressed)){  
+    if(dist(figuras[5][0],figuras[5][1],mouseX,mouseY)<20){  
+      if(mousePressed){
       figuras[5][0]= mouseX;
       figuras[5][1]= mouseY;
+      }
+      fill(10,0,205);
+      push();
+        translate(figuras[5][0],figuras[5][1]);
+        rotate(radians(figuras[5][2]));
+        rect(-25,-25,50,50);
+        fill(121,85,72);
+        stroke(188,170,164);
+        strokeWeight(0.8);
+        circle(0,0,20);
+      pop();
     }
-  fill(10,0,205);
-  push();
-    translate(figuras[5][0],figuras[5][1]);
-    rotate(radians(figuras[5][2]));
-    rect(-25,-25,50,50);
-    fill(121,85,72);
-    noStroke();
-    circle(0,0,20);
-  pop();
+    else{
+    fill(10,0,205);
+    push();
+      translate(figuras[5][0],figuras[5][1]);
+      rotate(radians(figuras[5][2]));
+      rect(-25,-25,50,50);
+      fill(121,85,72);
+      noStroke();
+      circle(0,0,20);
+    pop();
+    }
 }
 //Programación paralelogramo
 void pintarParalelogramo(){
