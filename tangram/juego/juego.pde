@@ -348,7 +348,7 @@ void condicionDeVictoria(boolean ganar, boolean dibujar ){
           contador++;
         }
      }
-     if(contador<1500){
+     if(contador<1450){
         print("ganaste");
         gano = false;
     }
