@@ -16,17 +16,18 @@ Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
     stroke(0);
     fill(c);
     translate(prs[0],prs[1]);
-    scale(prs[3]);
     rotate(radians(prs[2]));
+    scale(prs[3]);
     drawFigura();
    pop();
   }
    abstract void drawFigura();
 
-  void move(float x,float y ,float r) {
+  void move(float x,float y ,float r,float s) {
     prs[0] = prs[0]+x;
     prs[1] = prs[1]+y;
     prs[2] = prs[2]+r;
+    prs[3] = prs[3]*s;
   }
   boolean seleccion(color cmouse) {
     if(cmouse ==c ){

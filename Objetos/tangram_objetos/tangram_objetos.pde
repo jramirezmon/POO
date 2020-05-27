@@ -23,17 +23,44 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,0,0.5);  
+          figura.move(0,0,0.5,1);  
         } 
      }
-    }   
+    }  
+     if (key == 'e' || key == 'E')
+    {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(0,0,-0.5,1);  
+        } 
+     }
+    }  
+      if (key == 't' || key == 'T')
+    {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(0,0,0,-1);  
+        } 
+     }
+    }
 }
 }
 void mouseDragged()
 {
    for (Figura figura :figuras ){  
     if (figura.seleccion(get(mouseX,mouseY))) {
-  figura.move(mouseX-pmouseX,mouseY-pmouseY,0);  
+  figura.move(mouseX-pmouseX,mouseY-pmouseY,0,1);  
   }
 }
+}
+void mouseWheel(MouseEvent event) {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(0,0,2*event.getCount(),1);  
+        } 
+     }  
+
 }
