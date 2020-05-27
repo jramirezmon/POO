@@ -3,6 +3,7 @@ public class Paralelogramo extends Figura{
     super(tempC,tempXpos,tempYpos,tempr,temps);
   }
   void drawFigura(){
+    scale(1,prs[3]);
     quad(-50,-25,0,-25,50,25,0,25);
   }
 }
