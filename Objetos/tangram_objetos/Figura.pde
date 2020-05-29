@@ -3,7 +3,7 @@ abstract class Figura{
 //atributos
 color c;
 float [] prs = {0,0,0,0};
-boolean f=false;
+boolean e=false;
 Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) { 
     c = tempC;
     prs[0]= tempXpos;
@@ -12,12 +12,12 @@ Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
     prs[3]=temps;
   }
    void display() {
-   push();
-    stroke(0);
+   push(); 
     fill(c);
     translate(prs[0],prs[1]);
     rotate(radians(prs[2]));
     scale(prs[3]);
+    stroke(0);
     drawFigura();
    pop();
   }
@@ -31,16 +31,19 @@ Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
   }
   boolean seleccion(color cmouse) {
     if(cmouse ==c ){
-      f=true;
-      return f ;
+      e=true;
+      return e ;
     }
     else {
-      f=false;
-      return f ;
+      e=false;
+      return e ;
     }
   }
    color getColor() {
     return c ;
+  }
+  float[] getprs() {
+    return prs;
   }
   
 }

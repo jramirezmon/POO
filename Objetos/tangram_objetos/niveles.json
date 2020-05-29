@@ -1,0 +1,14 @@
+
+{
+    "nivel":[
+        {
+            "position":[0,0,1],
+            "tipo":"Triangulo"
+        },
+        {
+            "position":[0,0,1,4],
+            "tipo":"Triangulo"
+        }
+    ]
+
+}

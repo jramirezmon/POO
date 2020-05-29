@@ -1,16 +1,18 @@
 
 Figura[] figuras;
+Figura[] fondo;
 void setup() {
   size(800,800);
  figuras = new Figura[7];
+ fondo =new Figura[7];
   // Parameters go inside the parentheses when the object is constructed.
-figuras[0]=new Triangulo(color(0,0,255),100,500,1,1);
-figuras[1]=new Triangulo(color(255,0,0),100,500,1,1);
-figuras[2]=new Triangulo(color(0,255,0),300,500,1,0.75);
-figuras[3]=new Triangulo(color(255,0,255),100,500,1,0.5);
-figuras[4]=new Triangulo(color(0,255,255),200,500,1,0.5);
-figuras[5]=new  Cuadrado(color(255,255,0),200,500,0,1);
-figuras[6]=new Paralelogramo(color(100,100,255),200,500,0,1);
+figuras[0]=new Triangulo(color(0,0,255),100,100,1,0.0025*height);
+figuras[1]=new Triangulo(color(255,0,0),100,100,1,0.0025*height);
+figuras[2]=new Triangulo(color(0,255,0),300,100,1,0.00175*  height);
+figuras[3]=new Triangulo(color(255,0,255),100,100,1,0.00125*height);
+figuras[4]=new Triangulo(color(0,255,255),200,100,1,0.00125*height);
+figuras[5]=new  Cuadrado(color(255,255,0),200,100,0,0.0025*height);
+figuras[6]=new Paralelogramo(color(100,100,255),200,100,0,0.0025*height);
 }
 void draw() {
   background(255);
@@ -23,7 +25,7 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,0,0.5,1);  
+          figura.move(0,0,0.2,1);  
         } 
      }
     }  
@@ -32,7 +34,7 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,0,-0.5,1);  
+          figura.move(0,0,-0.2,1);  
         } 
      }
     }  
