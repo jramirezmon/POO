@@ -2,6 +2,7 @@
 abstract class Figura{
 //atributos
 color c;
+int s =1;
 float [] prs = {0,0,0,0};
 boolean e=false;
 Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) { 
@@ -16,18 +17,18 @@ Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
     fill(c);
     translate(prs[0],prs[1]);
     rotate(radians(prs[2]));
-    scale(prs[3]);
+    scale(prs[3]*s);
     stroke(0);
     drawFigura();
    pop();
   }
    abstract void drawFigura();
 
-  void move(float x,float y ,float r,float s) {
+  void move(float x,float y ,float r,int st) {
     prs[0] = prs[0]+x;
     prs[1] = prs[1]+y;
     prs[2] = prs[2]+r;
-    prs[3] = prs[3]*s;
+    s = st;
   }
   boolean seleccion(color cmouse) {
     if(cmouse ==c ){

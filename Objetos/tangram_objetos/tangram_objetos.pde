@@ -2,7 +2,7 @@
 Figura[] figuras;
 Figura[] fondo;
 void setup() {
-  size(800,800);
+  size(1920,1080);
  figuras = new Figura[7];
  fondo =new Figura[7];
   // Parameters go inside the parentheses when the object is constructed.

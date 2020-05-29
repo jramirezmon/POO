@@ -4,6 +4,6 @@ public class Cuadrado extends Figura{
     
   }
   void drawFigura(){
-    rect(-25,-25,50,50);
+    square(-25,-25,50);
   }
 }
