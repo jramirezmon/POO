@@ -4,7 +4,6 @@ Figura[] figurasNivel;
 void setup() {
   size(1920,1080);
  figuras = new Figura[7];
-
   // Parameters go inside the parentheses when the object is constructed.
 figuras[0]=new Triangulo(color(0,0,255),100,100,1,0.0025*height);
 figuras[1]=new Triangulo(color(255,0,0),100,100,1,0.0025*height);
@@ -48,6 +47,42 @@ if (keyPressed) {
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
           figura.move(0,0,0,-1);  
+        } 
+     }
+    }
+    if (key == 'a' || key == 'A')
+    {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(-1,0,0,0);  
+        } 
+     }
+    }
+    if (key == 's' || key == 'S')
+    {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(0,1,0,0);  
+        } 
+     }
+    }
+    if (key == 'w' || key == 'W')
+    {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(0,-1,0,0);  
+        } 
+     }
+    }
+    if (key == 'd' || key == 'D')
+    {
+     for (Figura figura :figuras )
+     {  
+        if (figura.seleccion(get(mouseX,mouseY))) {
+          figura.move(1,0,0,0);  
         } 
      }
     }
