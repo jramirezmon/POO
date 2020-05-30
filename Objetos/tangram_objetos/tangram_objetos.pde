@@ -17,6 +17,10 @@ void draw() {
   background(255);
   juego();
 }
+void creador(){
+  //juanfer
+  saveData();
+}
 void juego(){
   loadData();
    for (Figura figuraNivel :figurasNivel ){  
@@ -90,6 +94,7 @@ if (keyPressed) {
      }
     }
 }
+//verificacion juanfer
 }
 void mouseDragged()
 {
@@ -107,7 +112,8 @@ void mouseWheel(MouseEvent event) {
         } 
      }  
 
-}void loadData() {
+}
+void loadData() {
   // Load the JSON file and grab the array.
   JSONObject json = loadJSONObject("niveles.json");
   JSONArray nivelData = json.getJSONArray("nivel1");
@@ -145,4 +151,7 @@ void mouseWheel(MouseEvent event) {
       break; 
     }
   }
+}
+void saveData(){
+  //trabajo juanfer
 }
