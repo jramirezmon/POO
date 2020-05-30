@@ -15,6 +15,9 @@ figuras[6]=new Paralelogramo(color(100,100,255),200,100,0,0.0025*height);
 }
 void draw() {
   background(255);
+  juego();
+}
+void juego(){
   loadData();
    for (Figura figuraNivel :figurasNivel ){  
     figuraNivel.display();
@@ -55,7 +58,7 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(-1,0,0,0);  
+          figura.move(-1,0,0,1);  
         } 
      }
     }
@@ -64,7 +67,7 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,1,0,0);  
+          figura.move(0,1,0,1);  
         } 
      }
     }
@@ -73,7 +76,7 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,-1,0,0);  
+          figura.move(0,-1,0,1);  
         } 
      }
     }
@@ -82,7 +85,7 @@ if (keyPressed) {
      for (Figura figura :figuras )
      {  
         if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(1,0,0,0);  
+          figura.move(1,0,0,1);  
         } 
      }
     }
