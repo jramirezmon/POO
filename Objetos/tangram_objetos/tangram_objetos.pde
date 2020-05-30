@@ -1,8 +1,8 @@
-
+boolean victoria = false;
 Figura[] figuras;
 Figura[] figurasNivel;
 void setup() {
-  size(1920,1080);
+  size(800,900);
  figuras = new Figura[7];
   // Parameters go inside the parentheses when the object is constructed.
 figuras[0]=new Triangulo(color(0,0,255),100,100,1,0.0025*height);
@@ -16,6 +16,7 @@ figuras[6]=new Paralelogramo(color(100,100,255),200,100,0,0.0025*height);
 void draw() {
   background(255);
   juego();
+  condicionDeVictoria();
 }
 void creador(){
   //juanfer
@@ -94,7 +95,25 @@ if (keyPressed) {
      }
     }
 }
+}
 //verificacion juanfer
+void condicionDeVictoria(){
+  if (victoria == false){
+    color negro = color(0,0,0);
+    loadPixels();
+    int contador = 0;
+    for ( int i = 0; i < (width*height); i++ ) {
+      color ddd =color(pixels[i]);
+        if(negro==ddd && (victoria==false)){
+          contador++;
+        }
+        
+     }
+     if(contador<4000){
+        print("Ganaste");
+        victoria = true;
+    }
+  }
 }
 void mouseDragged()
 {
