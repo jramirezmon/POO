@@ -22,7 +22,8 @@ void draw() {
 }
  for (Figura figura :figuras ){  
     figura.display();
-}
+   }
+
 if (keyPressed) {
     if (key == 'r' || key == 'R')
     {
@@ -72,7 +73,7 @@ void mouseWheel(MouseEvent event) {
 }void loadData() {
   // Load the JSON file and grab the array.
   JSONObject json = loadJSONObject("niveles.json");
-  JSONArray nivelData = json.getJSONArray("nivel1");
+  JSONArray nivelData = json.getJSONArray("nivel");
 
   // The size of the array of Bubble objects is determined by the length of the JSON array.
   figurasNivel = new Figura[nivelData.size()]; 

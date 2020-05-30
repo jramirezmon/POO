@@ -17,7 +17,7 @@ Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
     fill(c);
     translate(prs[0],prs[1]);
     rotate(radians(prs[2]));
-    scale(prs[3]*s);
+    scale(prs[3]);
     stroke(0);
     drawFigura();
    pop();
@@ -28,6 +28,7 @@ Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
     prs[0] = prs[0]+x;
     prs[1] = prs[1]+y;
     prs[2] = prs[2]+r;
+    prs[3] = prs[3]*st;
     s = st;
   }
   boolean seleccion(color cmouse) {
