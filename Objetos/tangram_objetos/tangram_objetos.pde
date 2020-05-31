@@ -2,7 +2,7 @@ boolean victoria = false;
 Figura[] figuras;
 Figura[] figurasNivel;
 void setup() {
-  saveData(figuras);
+ 
   size(900,700,P2D);
   titulo = loadImage("Titulo.png");
  figuras = new Figura[7];
@@ -14,6 +14,7 @@ figuras[3]=new Triangulo(color(255,0,255),100,100,1,0.00125*height);
 figuras[4]=new Triangulo(color(0,255,255),200,100,1,0.00125*height);
 figuras[5]=new  Cuadrado(color(255,255,0),200,100,0,0.0025*height);
 figuras[6]=new Paralelogramo(color(100,100,255),200,100,0,0.0025*height);
+ saveData(figuras);
 }
 void draw() {
   background(255);
