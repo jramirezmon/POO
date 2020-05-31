@@ -2,7 +2,7 @@ void modo_creador(){
 
    if (keyPressed) {
     if (key == 'g' || key == 'G'){
-      //saveData();
+      saveData(figuras);
     } 
  }
    for (Figura figuraNivel :figurasNivel ){  
@@ -77,28 +77,25 @@ if (keyPressed) {
     }
 }
 }
-void saveData(){
+void saveData(Figura[] figuras){
   
  //Aquí debería ir cada pieza   
-int[] triangulo = {0,1,2,3,4,5,6};
-
 JSONObject json;  
   JSONArray nivel = new JSONArray();
 
-  for (int i = 0; i < triangulo.length; i++) {
+//En el for pensaba poner figuras.length pero de momento no permite hacerlo
 
+  for (int i = 0; i < 7; i++) {
     JSONObject pieza = new JSONObject();
-
     pieza.setInt("id", i);
-    
-    //Aquí se asigna el array de cada pieza
-    pieza.setInt("species", triangulo[i]);
-
+    for (int j = 1; j < 4; j++){
+    float[] posicion = figuras[i].getprs();
+    pieza.setFloat("prs",posicion[j]);
     nivel.setJSONObject(i, pieza);
+    }
   }
-  
   json = new JSONObject();
-  json.setJSONArray("animals", nivel);
+  json.setJSONArray("piezas", nivel);
 
   saveJSONObject(json, "data/new.json");  
   }

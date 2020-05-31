@@ -1,30 +1,9 @@
 {"animals": [
-  {
-    "species": 0,
-    "id": 0
-  },
-  {
-    "species": 1,
-    "id": 1
-  },
-  {
-    "species": 2,
-    "id": 2
-  },
-  {
-    "species": 3,
-    "id": 3
-  },
-  {
-    "species": 4,
-    "id": 4
-  },
-  {
-    "species": 5,
-    "id": 5
-  },
-  {
-    "species": 6,
-    "id": 6
-  }
+  {"id": 0},
+  {"id": 1},
+  {"id": 2},
+  {"id": 3},
+  {"id": 4},
+  {"id": 5},
+  {"id": 6}
 ]}
