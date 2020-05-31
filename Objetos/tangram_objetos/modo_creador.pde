@@ -1,5 +1,6 @@
 void modo_creador(){
-
+    //juanfer
+   saveData();
    for (Figura figuraNivel :figurasNivel ){  
     figuraNivel.display();
 }
@@ -71,4 +72,7 @@ if (keyPressed) {
      }
     }
 }
+}
+void saveData(){
+  //trabajo juanfer
 }
