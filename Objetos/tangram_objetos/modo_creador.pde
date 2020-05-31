@@ -1,5 +1,14 @@
 void modo_creador(){
-   for (Figura figura :figuras ){  
+
+   if (keyPressed) {
+    if (key == 'g' || key == 'G'){
+      saveData(figuras);
+    } 
+ }
+   for (Figura figuraNivel :figurasNivel ){  
+    figuraNivel.display();
+}
+ for (Figura figura :figuras ){  
     figura.display();
 }
 if (keyPressed) {
@@ -66,11 +75,6 @@ if (keyPressed) {
         } 
      }
     }
-       if (keyPressed) {
-    if (key == 'g' || key == 'G'){
-      saveData(figuras);
-    } 
- }
 }
 }
 void saveData(Figura[] figuras){
