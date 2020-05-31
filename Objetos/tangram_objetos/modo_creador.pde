@@ -82,7 +82,6 @@ void saveData(){
   JSONArray nivelData = json.getJSONArray("nivel1");
   figurasNivel = new Figura[nivelData.size()]; 
   for (int i = 0; i<nivelData.size(); i++) {
-    
     JSONObject nivel = nivelData.getJSONObject(i);
     // Get a position object
     float  x = nivel.getFloat("x");
