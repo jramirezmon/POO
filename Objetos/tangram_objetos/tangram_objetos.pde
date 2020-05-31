@@ -3,6 +3,7 @@ Figura[] figuras;
 Figura[] figurasNivel;
 void setup() {
   size(900,700,P2D);
+  saveData();
   titulo = loadImage("Titulo.png");
  figuras = new Figura[7];
   // Parameters go inside the parentheses when the object is constructed.

@@ -100,8 +100,5 @@ JSONObject json;
   json = new JSONObject();
   json.setJSONArray("animals", nivel);
 
-  saveJSONObject(json, "data/new.json");
-
-  
-  
+  saveJSONObject(json, "data/new.json");  
   }
