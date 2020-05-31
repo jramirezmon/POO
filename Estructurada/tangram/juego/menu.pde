@@ -41,7 +41,7 @@ boolean menu(){
      float y = sin(radians(frameCount*3));
      push();
      translate(0,20*y);
-     image(titulo, 60,40);
+     image(titulo, (width/2)-332,40);
      pantallaInicial = pintarBoton();
      pop();
   return pantallaInicial;
