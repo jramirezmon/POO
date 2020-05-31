@@ -74,5 +74,12 @@ if (keyPressed) {
 }
 }
 void saveData(){
-  //trabajo juanfer
+  JSONObject json;
+  json = new JSONObject();
+  JSONObject nivel =new JSONObject();
+  nivel.setInt("numero",1);
+  nivel.setString("figura","canguro");
+  json.setJSONObject("nivel",nivel);
+  println(json);
+  
 }
