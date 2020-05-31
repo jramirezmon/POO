@@ -13,7 +13,6 @@ void setup() {
   figuras[4]=new Triangulo(color(0,255,255),200,100,1,0.00125*height);
   figuras[5]=new  Cuadrado(color(255,255,0),200,100,0,0.0025*height);
   figuras[6]=new Paralelogramo(color(100,100,255),200,100,0,0.0025*height);
- saveData(figuras);
 }
 void draw() {
   background(255);

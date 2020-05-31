@@ -5,9 +5,6 @@ void modo_creador(){
       saveData(figuras);
     } 
  }
-   for (Figura figuraNivel :figurasNivel ){  
-    figuraNivel.display();
-}
  for (Figura figura :figuras ){  
     figura.display();
 }
