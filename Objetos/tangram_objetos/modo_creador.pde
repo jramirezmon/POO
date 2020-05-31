@@ -79,26 +79,26 @@ if (keyPressed) {
 }
 void saveData(){
   
-    
-String[] species = { "Capra hircus", "Panthera pardus", "Equus zebra" };
-String[] names = { "Goat", "Leopard", "Zebra" };
+ //Aquí debería ir cada pieza   
+int[] triangulo = {0,1,2,3,4,5,6};
 
 JSONObject json;  
-  JSONArray values = new JSONArray();
+  JSONArray nivel = new JSONArray();
 
-  for (int i = 0; i < species.length; i++) {
+  for (int i = 0; i < triangulo.length; i++) {
 
-    JSONObject animal = new JSONObject();
+    JSONObject pieza = new JSONObject();
 
-    animal.setInt("id", i);
-    animal.setString("species", species[i]);
-    animal.setString("name", names[i]);
+    pieza.setInt("id", i);
+    
+    //Aquí se asigna el array de cada pieza
+    pieza.setInt("species", triangulo[i]);
 
-    values.setJSONObject(i, animal);
+    nivel.setJSONObject(i, pieza);
   }
   
   json = new JSONObject();
-  json.setJSONArray("animals", values);
+  json.setJSONArray("animals", nivel);
 
   saveJSONObject(json, "data/new.json");
 
