@@ -78,38 +78,30 @@ if (keyPressed) {
 }
 }
 void saveData(){
-  JSONObject json = new JSONObject();
-  JSONArray nivelData = json.getJSONArray("nivel1");
-  figurasNivel = new Figura[nivelData.size()]; 
-  for (int i = 0; i<nivelData.size(); i++) {
-    JSONObject nivel = nivelData.getJSONObject(i);
-    // Get a position object
-    float  x = nivel.getFloat("x");
-    float y = nivel.getFloat("y");
-    float r = nivel.getFloat("r");
+  
     
-  switch(i){
-      case 0:
-      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.0025*height);
-      break;
-      case 1:
-      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.0025*height);
-      break;
-      case 2:
-      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.00175*height);
-      break;
-      case 3:
-      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.00125*height);
-      break;
-      case 4:
-      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.00125*height);
-      break;
-      case 5:
-      figurasNivel[i]=new Cuadrado(color(0,0,0),x,y,r,0.0025*height);
-      break;
-      case 6:
-      figurasNivel[i]=new Paralelogramo(color(0,0,0),x,y,r,0.0025*height);
-      break;
+String[] species = { "Capra hircus", "Panthera pardus", "Equus zebra" };
+String[] names = { "Goat", "Leopard", "Zebra" };
+
+JSONObject json;  
+  JSONArray values = new JSONArray();
+
+  for (int i = 0; i < species.length; i++) {
+
+    JSONObject animal = new JSONObject();
+
+    animal.setInt("id", i);
+    animal.setString("species", species[i]);
+    animal.setString("name", names[i]);
+
+    values.setJSONObject(i, animal);
   }
+  
+  json = new JSONObject();
+  json.setJSONArray("animals", values);
+
+  saveJSONObject(json, "data/new.json");
+
+  
+  
   }
-}
