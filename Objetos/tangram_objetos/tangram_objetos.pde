@@ -21,11 +21,8 @@ void draw() {
     juego();
   }
   //modo_creador();
-  
   condicionDeVictoria();
 }
-
-
 void mouseDragged()
 {
    for (Figura figura :figuras ){  
