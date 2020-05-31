@@ -74,12 +74,19 @@ if (keyPressed) {
 }
 }
 void saveData(){
-  JSONObject json;
-  json = new JSONObject();
-  JSONObject nivel =new JSONObject();
-  nivel.setInt("numero",1);
-  nivel.setString("figura","canguro");
-  json.setJSONObject("nivel",nivel);
-  println(json);
+  JSONObject json = new JSONObject();
+  JSONArray nivelData = json.getJSONArray("nivel1");
+  figurasNivel = new Figura[nivelData.size()]; 
+  for (int i = 0; i<nivelData.size(); i++) {
+    
+    JSONObject nivel = nivelData.getJSONObject(i);
+    // Get a position object
+    float  x = nivel.getFloat("x");
+    float y = nivel.getFloat("y");
+    float r = nivel.getFloat("r");
+    
+  switch(i){
   
+  }
+  }
 }
