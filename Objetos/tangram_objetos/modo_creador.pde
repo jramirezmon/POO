@@ -1,6 +1,10 @@
 void modo_creador(){
-    //juanfer
-   saveData();
+
+   if (keyPressed) {
+    if (key == 'g' || key == 'G'){
+      //saveData();
+    } 
+ }
    for (Figura figuraNivel :figurasNivel ){  
     figuraNivel.display();
 }
@@ -86,7 +90,27 @@ void saveData(){
     float r = nivel.getFloat("r");
     
   switch(i){
-  
+      case 0:
+      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.0025*height);
+      break;
+      case 1:
+      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.0025*height);
+      break;
+      case 2:
+      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.00175*height);
+      break;
+      case 3:
+      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.00125*height);
+      break;
+      case 4:
+      figurasNivel[i]=new Triangulo(color(0,0,0),x,y,r,0.00125*height);
+      break;
+      case 5:
+      figurasNivel[i]=new Cuadrado(color(0,0,0),x,y,r,0.0025*height);
+      break;
+      case 6:
+      figurasNivel[i]=new Paralelogramo(color(0,0,0),x,y,r,0.0025*height);
+      break;
   }
   }
 }

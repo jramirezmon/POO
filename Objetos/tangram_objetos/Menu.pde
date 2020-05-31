@@ -1,5 +1,6 @@
 //Parte del código en donde se encuentra alojada la página de inicio, a la cual se accede por medio de la tecla 'p'
 //Dicha tecla cambia la condición de un booleano el cual controla lo que se dibuja en la pantalla en cada momento 
+
 PImage titulo;
 //Programación del botón
 boolean pantallaInicial=false;
