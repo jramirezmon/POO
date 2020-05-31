@@ -5,6 +5,6 @@ public class Cuadrado extends Figura {
     }
 
     void drawFigura() {
-        MainClass.processing.rect(-25, -25, 50, 50);
+        MainClass.processing.square(-25,-25,50);
     }
 }

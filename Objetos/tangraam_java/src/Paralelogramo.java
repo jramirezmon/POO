@@ -4,6 +4,7 @@ public class Paralelogramo extends Figura {
     }
 
     void drawFigura() {
+        MainClass.processing.scale(1,s);
         MainClass.processing.quad(-50, -25, 0, -25, 50, 25, 0, 25);
     }
 }
