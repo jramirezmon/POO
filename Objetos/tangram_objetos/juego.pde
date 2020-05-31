@@ -72,6 +72,24 @@ if (keyPressed) {
     }
 }
 }
+void condicionDeVictoria(){
+  if (victoria == false){
+    color negro = color(0,0,0);
+    loadPixels();
+    int contador = 0;
+    for ( int i = 0; i < (width*height); i++ ) {
+      color ddd =color(pixels[i]);
+        if(negro==ddd && (victoria==false)){
+          contador++;
+        }
+        
+     }
+     if(contador<4000 && pantallaInicial){
+        print("Ganaste");
+        victoria = true;
+    }
+  }
+}
 void loadData() {
   //JSONObject json = loadJSONObject("niveles.json");
   //JSONArray nivelData = json.getJSONArray("nivel1");
