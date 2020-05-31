@@ -73,9 +73,10 @@ if (keyPressed) {
 }
 }
 void loadData() {
-  JSONObject json = loadJSONObject("niveles.json");
-  JSONArray nivelData = json.getJSONArray("nivel1");
-
+  //JSONObject json = loadJSONObject("niveles.json");
+  //JSONArray nivelData = json.getJSONArray("nivel1");
+  JSONObject json = loadJSONObject("data/new.json");
+  JSONArray nivelData = json.getJSONArray("piezas");
 
   figurasNivel = new Figura[nivelData.size()]; 
   for (int i = 0; i<nivelData.size(); i++) {
