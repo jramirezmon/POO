@@ -88,11 +88,12 @@ JSONObject json;
   for (int i = 0; i < 7; i++) {
     JSONObject pieza = new JSONObject();
     pieza.setInt("id", i);
-    for (int j = 1; j < 4; j++){
     float[] posicion = figuras[i].getprs();
-    pieza.setFloat("prs",posicion[j]);
+    pieza.setFloat("x",posicion[0]);
+    pieza.setFloat("y",posicion[1]);
+    pieza.setFloat("r",posicion[2]);
+    pieza.setFloat("e",posicion[3]);
     nivel.setJSONObject(i, pieza);
-    }
   }
   json = new JSONObject();
   json.setJSONArray("piezas", nivel);
