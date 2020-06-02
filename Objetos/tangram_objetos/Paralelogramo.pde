@@ -1,9 +1,9 @@
-public class Paralelogramo extends Figura{
-  Paralelogramo(color tempC, float tempXpos, float tempYpos, float tempr, float temps){
-    super(tempC,tempXpos,tempYpos,tempr,temps);
+public class Paralelogramo extends Figura {
+  Paralelogramo(color tempC, float tempXpos, float tempYpos, float tempr, float temps) {
+    super(tempC, tempXpos, tempYpos, tempr, temps);
   }
-  void drawFigura(){
-    scale(1,s);
-    quad(-50,-25,0,-25,50,25,0,25);
+  void drawFigura() {
+    scale(1, s);
+    quad(-50, -25, 0, -25, 50, 25, 0, 25);
   }
 }

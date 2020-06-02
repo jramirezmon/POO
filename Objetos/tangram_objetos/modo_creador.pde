@@ -1,99 +1,96 @@
-void modo_creador(){
+void modo_creador() {
 
-   if (keyPressed) {
-    if (key == 'g' || key == 'G'){
+  if (keyPressed) {
+    if (key == 'g' || key == 'G') {
       saveData(figuras);
-    } 
- }
- for (Figura figura :figuras ){  
+    }
+  }
+  for (Figura figura : figuras ) {  
     figura.display();
-}
-if (keyPressed) {
+  }
+  if (keyPressed) {
     if (key == 'r' || key == 'R')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,0,0.2,1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(0, 0, 0.2, 1);
+        }
+      }
     }  
-     if (key == 'e' || key == 'E')
+    if (key == 'e' || key == 'E')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,0,-0.2,1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(0, 0, -0.2, 1);
+        }
+      }
     }  
-      if (key == 't' || key == 'T')
+    if (key == 't' || key == 'T')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,0,0,-1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(0, 0, 0, -1);
+        }
+      }
     }
     if (key == 'a' || key == 'A')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(-1,0,0,1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(-1, 0, 0, 1);
+        }
+      }
     }
     if (key == 's' || key == 'S')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,1,0,1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(0, 1, 0, 1);
+        }
+      }
     }
     if (key == 'w' || key == 'W')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(0,-1,0,1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(0, -1, 0, 1);
+        }
+      }
     }
     if (key == 'd' || key == 'D')
     {
-     for (Figura figura :figuras )
-     {  
-        if (figura.seleccion(get(mouseX,mouseY))) {
-          figura.move(1,0,0,1);  
-        } 
-     }
+      for (Figura figura : figuras )
+      {  
+        if (figura.seleccion(get(mouseX, mouseY))) {
+          figura.move(1, 0, 0, 1);
+        }
+      }
     }
+  }
 }
-}
-void saveData(Figura[] figuras){
-  
- //Aquí debería ir cada pieza   
-JSONObject json;  
+void saveData(Figura[] figuras) {
+
+  //Aquí debería ir cada pieza   
+  JSONObject json;  
   JSONArray nivel = new JSONArray();
-
-//En el for pensaba poner figuras.length pero de momento no permite hacerlo
-
-  for (int i = 0; i < 7; i++) {
+  for (int i = 0; i <figuras.length ; i++) {
     JSONObject pieza = new JSONObject();
     pieza.setInt("id", i);
     float[] posicion = figuras[i].getprs();
-    pieza.setFloat("x",posicion[0]);
-    pieza.setFloat("y",posicion[1]);
-    pieza.setFloat("r",posicion[2]);
-    pieza.setFloat("e",posicion[3]);
+    pieza.setFloat("x", posicion[0]);
+    pieza.setFloat("y", posicion[1]);
+    pieza.setFloat("r", posicion[2]);
+    pieza.setFloat("e", posicion[3]);
     nivel.setJSONObject(i, pieza);
   }
   json = new JSONObject();
   json.setJSONArray("piezas", nivel);
 
-  saveJSONObject(json, "data/new.json");  
-  }
+  saveJSONObject(json, "data/new.json");
+}
