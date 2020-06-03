@@ -1,5 +1,5 @@
 void juego() {
-  loadData(nivel1);
+  loadData("nivel1");
   for (Figura figuraNivel : figurasNivel ) {  
     figuraNivel.display();
   }
@@ -89,7 +89,7 @@ void condicionDeVictoria() {
     }
   }
 }
-void loadData(nombre) {
+void loadData(String nombre) {
   //JSONObject json = loadJSONObject("niveles.json");
   //JSONArray nivelData = json.getJSONArray("nivel1");
   JSONObject json = loadJSONObject("data/"+nombre+".json");

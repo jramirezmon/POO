@@ -18,8 +18,8 @@ void draw() {
   background(255);
   menu();
   if (pantallaInicial) {
-    juego();
-    //modo_creador();
+    //juego();
+    modo_creador();
   }
 
   condicionDeVictoria();

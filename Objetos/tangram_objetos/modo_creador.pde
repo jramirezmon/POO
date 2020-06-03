@@ -74,7 +74,7 @@ if (keyPressed) {
     }
 }
 }
-void saveData(Figura[] figuras,nombre){
+void saveData(Figura[] figuras,String nombre){
  //Aquí debería ir cada pieza   
 JSONObject json;  
   JSONArray nivel = new JSONArray();
