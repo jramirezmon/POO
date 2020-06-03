@@ -18,7 +18,7 @@ abstract class Figura {
     translate(prs[0], prs[1]);
     rotate(radians(prs[2]));
     scale(prs[3]);
-    stroke(0);
+    stroke(255);
     drawFigura();
     pop();
   }

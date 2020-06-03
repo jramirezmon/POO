@@ -3,7 +3,6 @@
 PImage titulo;
 //Programación del botón
 boolean pantallaInicial=false;
-
 boolean pintarBoton() {
   //Lado del triángulo del botón
   int lado = 50;
