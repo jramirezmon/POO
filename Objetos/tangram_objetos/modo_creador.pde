@@ -2,7 +2,7 @@ void modo_creador(){
 
    if (keyPressed) {
     if (key == 'g' || key == 'G'){
-      saveData(figuras);
+      saveData(figuras,"nivel1");
     } 
  }
  for (Figura figura :figuras ){  
@@ -75,7 +75,6 @@ if (keyPressed) {
 }
 }
 void saveData(Figura[] figuras,nombre){
-  
  //Aquí debería ir cada pieza   
 JSONObject json;  
   JSONArray nivel = new JSONArray();
@@ -92,4 +91,4 @@ JSONObject json;
   json = new JSONObject();
   json.setJSONArray("piezas", nivel);
   saveJSONObject(json, "data/"+nombre+".json");  
-  }
+}
