@@ -2,7 +2,7 @@ void modo_creador(){
 
    if (keyPressed) {
     if (key == 'g' || key == 'G'){
-      saveData(figuras);
+      saveData(figuras,"nivel1");
     } 
  }
  for (Figura figura :figuras ){  
@@ -74,15 +74,11 @@ if (keyPressed) {
     }
 }
 }
-void saveData(Figura[] figuras){
-  
+void saveData(Figura[] figuras,String nombre){
  //Aquí debería ir cada pieza   
 JSONObject json;  
   JSONArray nivel = new JSONArray();
-
-//En el for pensaba poner figuras.length pero de momento no permite hacerlo
-
-  for (int i = 0; i < 7; i++) {
+  for (int i = 0; i < figuras.length; i++) {
     JSONObject pieza = new JSONObject();
     pieza.setInt("id", i);
     float[] posicion = figuras[i].getprs();
@@ -94,6 +90,5 @@ JSONObject json;
   }
   json = new JSONObject();
   json.setJSONArray("piezas", nivel);
-
-  saveJSONObject(json, "data/new.json");  
-  }
+  saveJSONObject(json, "data/"+nombre+".json");  
+}
