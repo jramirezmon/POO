@@ -1,4 +1,3 @@
-
 abstract class Figura {
   //atributos
   color c;

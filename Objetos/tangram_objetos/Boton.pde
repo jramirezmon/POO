@@ -3,10 +3,11 @@ public class Boton extends Figura {
     super(tempC, tempXpos, tempYpos, tempr, temps);
   }
   void drawFigura() {
-    strokeWeight(6);
+    rotate(radians(30));
+    fill(160, 52, 114);
+    noStroke();
     circle(0, 0, 130);
     fill(255, 117, 20);
-    strokeWeight(4);
     triangle(-50, -(50*sqrt(3))/2+15, 50, -(50*sqrt(3))/2+15, 0, (50*sqrt(3))/2+15);
   }
 }
