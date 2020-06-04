@@ -1,51 +1,51 @@
 {"piezas": [
   {
-    "r": 1,
-    "e": 1.75,
-    "x": 100,
-    "y": 100,
-    "id": 0
+    "posicion_y": 100,
+    "id": 0,
+    "posicion_x": 100,
+    "escala": 1.75,
+    "rotacion": 1
   },
   {
-    "r": 1,
-    "e": 1.75,
-    "x": 100,
-    "y": 100,
-    "id": 1
+    "posicion_y": 227,
+    "id": 1,
+    "posicion_x": 183,
+    "escala": 1.75,
+    "rotacion": 1
   },
   {
-    "r": 1,
-    "e": 1.225000023841858,
-    "x": 530,
-    "y": 297,
-    "id": 2
+    "posicion_y": 309,
+    "id": 2,
+    "posicion_x": 473,
+    "escala": 1.225000023841858,
+    "rotacion": 1
   },
   {
-    "r": 1,
-    "e": 0.875,
-    "x": 100,
-    "y": 100,
-    "id": 3
+    "posicion_y": 91,
+    "id": 3,
+    "posicion_x": 353,
+    "escala": 0.875,
+    "rotacion": 1
   },
   {
-    "r": 1,
-    "e": 0.875,
-    "x": 200,
-    "y": 100,
-    "id": 4
+    "posicion_y": 236,
+    "id": 4,
+    "posicion_x": 350,
+    "escala": 0.875,
+    "rotacion": 1
   },
   {
-    "r": 0,
-    "e": 1.75,
-    "x": 200,
-    "y": 100,
-    "id": 5
+    "posicion_y": 157,
+    "id": 5,
+    "posicion_x": 494,
+    "escala": 1.75,
+    "rotacion": 0
   },
   {
-    "r": 0,
-    "e": 1.75,
-    "x": 364,
-    "y": 458,
-    "id": 6
+    "posicion_y": 391,
+    "id": 6,
+    "posicion_x": 227,
+    "escala": 1.75,
+    "rotacion": 0
   }
 ]}
