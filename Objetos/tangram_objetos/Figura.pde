@@ -1,11 +1,11 @@
 abstract class Figura {
   //atributos
-  color c;
+  color color_Piezas;
   int s =1;
   float [] prs = {0, 0, 0, 0};
   boolean e=false;
   Figura(color tempC, float tempXpos, float tempYpos, float tempr, float temps) { 
-    c = tempC;
+    color_Piezas = tempC;
     prs[0]= tempXpos;
     prs[1]= tempYpos;
     prs[2]= tempr;
@@ -13,7 +13,7 @@ abstract class Figura {
   }
   void display() {
     push(); 
-    fill(c);
+    fill(color_Piezas);
     translate(prs[0], prs[1]);
     rotate(radians(prs[2]));
     scale(prs[3]);
@@ -31,7 +31,7 @@ abstract class Figura {
     s = st;
   }
   boolean seleccion(color cmouse) {
-    if (cmouse ==c ) {
+    if (cmouse ==color_Piezas ) {
       e=true;
       return e ;
     } else {
@@ -40,7 +40,7 @@ abstract class Figura {
     }
   }
   color getColor() {
-    return c ;
+    return color_Piezas ;
   }
   float[] getprs() {
     return prs;
