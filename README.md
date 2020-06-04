@@ -1,4 +1,4 @@
-# Proyecto POO Tangram  :large_orange_diamond:
+# :large_orange_diamond: Proyecto POO Tangram  :large_orange_diamond:
 
 ~~~
 En este proyecto se desarrollará un tangram haciendo uso de processing. 
