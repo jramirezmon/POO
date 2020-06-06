@@ -18,9 +18,9 @@ void setup() {
   figuras[5]=new  Cuadrado(color(255, 255, 0), 200, 100, 0, 0.0025*height);
   figuras[6]=new Paralelogramo(color(100, 100, 255), 200, 100, 0, 0.0025*height);
   botones = new Figura[3];
-  for (int i = 0; i < botones.length; i++) {  
-    botones[i]=new Boton(color(160, 52, 114), 150+i*width/3, height/2, 0, height/500);
-  }
+  botones[0]=new Boton(color(160, 52, 114), 150+0*width/3, height/2, 0, height/500, "Creador");
+  botones[1]=new Boton(color(160, 52, 114), 150+1*width/3, height/2, 0, height/500, "  Jugar");
+  botones[2]=new Boton(color(160, 52, 114), 150+2*width/3, height/2, 0, height/500, "Créditos");
 }
 void draw() {
   background(255);
@@ -48,9 +48,9 @@ int menu() {
       if (boton.seleccion_centro()) {
         switch (contador) {
         case 0:
-          return 1;
-        case 1:
           return 2;
+        case 1:
+          return 1;
         case 2:
           return 0;
         default:
@@ -142,6 +142,7 @@ int juego() {
     }
   }
   if (condicionDeVictoria()) {
+    delay(300);
     return 0;
   }
   return 1;
