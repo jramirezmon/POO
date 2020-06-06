@@ -1,10 +1,14 @@
 boolean victoria = false;
 Figura[] figuras;
 Figura[] figurasNivel;
+Figura[] botones;
+Figura[] imagenes;
+int caso;
+
 void setup() {
   size(900, 700, P2D);
-  titulo = loadImage("Titulo.png");
-
+  imagenes = new Figura[1];
+  imagenes[0]= new Imagen(color(0, 0, 255), (width/2)-450, 40, 0, 0.0015*height, "Titulo");
   figuras = new Figura[7];
   figuras[0]=new Triangulo(color(0, 0, 255), 100, 100, 1, 0.0025*height);
   figuras[1]=new Triangulo(color(255, 0, 0), 100, 100, 1, 0.0025*height);
@@ -13,19 +17,57 @@ void setup() {
   figuras[4]=new Triangulo(color(0, 255, 255), 200, 100, 1, 0.00125*height);
   figuras[5]=new  Cuadrado(color(255, 255, 0), 200, 100, 0, 0.0025*height);
   figuras[6]=new Paralelogramo(color(100, 100, 255), 200, 100, 0, 0.0025*height);
+  botones = new Figura[3];
+  for (int i = 0; i < botones.length; i++) {  
+    botones[i]=new Boton(color(160, 52, 114), 150+i*width/3, height/2, 0, height/500);
+  }
 }
 void draw() {
   background(255);
-  menu();
-  if (pantallaInicial) {
-    juego();
-    //modo_creador();
+  switch (caso) {
+  case 0:
+    imagenes[0].display();
+    caso=menu();
+    break;
+  case 1:
+    caso=juego();
+    break;
+  case 2:
+    caso=modo_creador();
+    break;
   }
-
-  condicionDeVictoria();
+}
+int menu() {
+  for (Figura boton : botones ) {  
+    boton.display();
+  }
+  if (mousePressed && (mouseButton == LEFT)) {
+    int contador = 0;
+    for (Figura boton : botones ) {  
+      if (boton.seleccion_centro()) {
+        switch (contador) {
+        case 0:
+          return 1;
+        case 1:
+          return 2;
+        case 2:
+          return 0;
+        default:
+          return 0;
+        }
+      }
+      contador +=1;
+    }
+  }
+  float y = sin(radians(frameCount*3));
+  for (Figura boton : botones ) {  
+    boton.move(0, y, 0, 1);
+  }
+  imagenes[0].move(0, y, 0, 1);
+  return 0;
 }
 
-void juego() {
+int juego() {
   loadData("nivel1");
   for (Figura figuraNivel : figurasNivel ) {  
     figuraNivel.display();
@@ -98,6 +140,10 @@ void juego() {
       }
     }
   }
+  if (condicionDeVictoria()) {
+    return 0;
+  }
+  return 1;
 }
 
 void mouseDragged()
@@ -117,22 +163,21 @@ void mouseWheel(MouseEvent event) {
   }
 }
 
-void condicionDeVictoria() {
-  if (victoria == false) {
-    color negro = color(0, 0, 0);
-    loadPixels();
-    int contador = 0;
-    for ( int i = 0; i < (width*height); i++ ) {
-      color ddd =color(pixels[i]);
-      if (negro==ddd && (victoria==false)) {
-        contador++;
-      }
-    }
-    if (contador<4000 && pantallaInicial) {
-      print("Ganaste");
-      victoria = true;
+boolean condicionDeVictoria() {
+  color negro = color(0, 0, 0);
+  loadPixels();
+  int contador = 0;
+  for ( int i = 0; i < (width*height); i++ ) {
+    color ddd =color(pixels[i]);
+    if (negro==ddd ) {
+      contador++;
     }
   }
+  if (contador<4000 ) {
+    print("Ganaste");
+    return true;
+  }
+  return false;
 }
 void loadData(String nombre) {
   JSONObject json = loadJSONObject("data/"+nombre+".json");
@@ -169,11 +214,15 @@ void loadData(String nombre) {
   }
 }
 
-void modo_creador() {
-
+int modo_creador() {
   if (keyPressed) {
     if (key == 'g' || key == 'G') {
       saveData(figuras, "nivel1");
+      for (Figura figura : figuras )
+      {  
+        figura.move(random(10, 300), random(10, 300), 0, 1);
+      }
+      return 0;
     }
   }
   for (Figura figura : figuras ) {  
@@ -244,6 +293,7 @@ void modo_creador() {
       }
     }
   }
+  return 2;
 }
 void saveData(Figura[] figuras, String nombre) {
   //Aquí debería ir cada pieza   

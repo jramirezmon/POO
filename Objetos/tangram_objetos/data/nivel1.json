@@ -1,51 +1,51 @@
 {"piezas": [
   {
-    "posicion_y": 100,
+    "posicion_y": 367.661376953125,
     "id": 0,
-    "posicion_x": 100,
+    "posicion_x": 556.5955200195312,
     "escala": 1.75,
-    "rotacion": 1
+    "rotacion": 133
   },
   {
-    "posicion_y": 227,
+    "posicion_y": 558.6117553710938,
     "id": 1,
-    "posicion_x": 183,
+    "posicion_x": 514.0606689453125,
     "escala": 1.75,
-    "rotacion": 1
+    "rotacion": 179
   },
   {
-    "posicion_y": 309,
+    "posicion_y": 330.603271484375,
     "id": 2,
-    "posicion_x": 473,
+    "posicion_x": 468.8714599609375,
     "escala": 1.225000023841858,
-    "rotacion": 1
+    "rotacion": -47
   },
   {
-    "posicion_y": 91,
+    "posicion_y": 144.32757568359375,
     "id": 3,
-    "posicion_x": 353,
+    "posicion_x": 507.519287109375,
     "escala": 0.875,
-    "rotacion": 1
+    "rotacion": -47
   },
   {
-    "posicion_y": 236,
+    "posicion_y": 150.81495666503906,
     "id": 4,
-    "posicion_x": 350,
+    "posicion_x": 435.62176513671875,
     "escala": 0.875,
-    "rotacion": 1
+    "rotacion": 135
   },
   {
-    "posicion_y": 157,
+    "posicion_y": 209.6624755859375,
     "id": 5,
-    "posicion_x": 494,
+    "posicion_x": 472.207763671875,
     "escala": 1.75,
-    "rotacion": 0
+    "rotacion": 44
   },
   {
-    "posicion_y": 391,
+    "posicion_y": 567.39990234375,
     "id": 6,
-    "posicion_x": 227,
-    "escala": 1.75,
-    "rotacion": 0
+    "posicion_x": 656.56201171875,
+    "escala": -1.75,
+    "rotacion": -180
   }
 ]}

@@ -17,7 +17,7 @@ abstract class Figura {
     translate(prs[0], prs[1]);
     rotate(radians(prs[2]));
     scale(prs[3]);
-    stroke(255);
+    stroke(0);
     drawFigura();
     pop();
   }
@@ -32,6 +32,15 @@ abstract class Figura {
   }
   boolean seleccion(color cmouse) {
     if (cmouse ==color_Piezas ) {
+      e=true;
+      return e ;
+    } else {
+      e=false;
+      return e ;
+    }
+  }
+    boolean seleccion_centro() {
+    if (dist(mouseX,mouseY,prs[0],prs[1])<130) {
       e=true;
       return e ;
     } else {
