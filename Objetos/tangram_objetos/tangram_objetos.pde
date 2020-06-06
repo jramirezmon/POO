@@ -26,6 +26,7 @@ void draw() {
   background(255);
   switch (caso) {
   case 0:
+    background(255,250,5);
     imagenes[0].display();
     caso=menu();
     break;

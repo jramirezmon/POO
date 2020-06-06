@@ -4,11 +4,11 @@ public class Boton extends Figura {
   }
   void drawFigura() {
     rotate(radians(30));
-    //fill(160, 52, 114);
+    fill(160, 52, 114);
     noStroke();
-    circle(0, 0, 130);
-    fill(255, 117, 20);
-    triangle(-50, -(50*sqrt(3))/2+15, 50, -(50*sqrt(3))/2+15, 0, (50*sqrt(3))/2+15);
+    square(0,0,100);
+    //fill(255, 117, 20);
+    //triangle(-50, -(50*sqrt(3))/2+15, 50, -(50*sqrt(3))/2+15, 0, (50*sqrt(3))/2+15);
   }
 
 }
