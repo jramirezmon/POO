@@ -12,7 +12,7 @@ public class Boton extends Figura {
       noStroke();
     }
     rectMode(CENTER);
-    rect(0,0,110,110);
+    rect(0, 0, 110, 110);
     translate(-40, 30);
     rotate(radians(-prs[2]));
     if (seleccion_centro()) {
