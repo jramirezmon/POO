@@ -7,26 +7,24 @@ public class Boton extends Figura {
   void drawFigura() {
     rotate(radians(30));
     fill(160, 52, 114);
-    if (seleccion_centro()){
+    if (seleccion_centro()) {
       strokeWeight(5);
       stroke(255);
-    }
-    else{
+    } else {
       noStroke();
     }
-    square(0,0,100);
+    square(0, 0, 100);
     push();
-    translate(10,75);
+    translate(10, 75);
     rotate(radians(-30));
-    if (seleccion_centro()){
-        fill(0);
-        textSize(25);
-        text(valor,2,2);
+    if (seleccion_centro()) {
+      fill(0);
+      textSize(25);
+      text(valor, 2, 2);
     }
     fill(46, 134, 193 );
     textSize(25);
-    text(valor,0,0);
+    text(valor, 0, 0);
     pop();
   }
-
 }

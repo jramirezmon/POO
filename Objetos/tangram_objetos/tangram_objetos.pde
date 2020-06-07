@@ -46,7 +46,7 @@ void keyPressed() {
 
 void draw() {
   background(255);
-    if (drawMalla)
+  if (drawMalla)
     drawMalla(10);
   switch (caso) {
   case 0:
@@ -325,6 +325,7 @@ int modo_creador() {
   }
   return 2;
 }
+
 void saveData(Figura[] figuras, String nombre) {
   //Aquí debería ir cada pieza   
   JSONObject json;  

@@ -39,8 +39,8 @@ abstract class Figura {
       return e ;
     }
   }
-    boolean seleccion_centro() {
-    if (dist(mouseX,mouseY,prs[0],prs[1])<130) {
+  boolean seleccion_centro() {
+    if (dist(mouseX, mouseY, prs[0], prs[1])<130) {
       e=true;
       return e ;
     } else {
