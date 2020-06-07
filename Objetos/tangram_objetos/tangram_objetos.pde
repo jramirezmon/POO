@@ -7,7 +7,7 @@ Figura[] imagenes;
 int caso;
 
 void setup() {
-  size(900, 700, P2D);
+  size(900, 680, P2D);
   imagenes = new Figura[1];
   imagenes[0]= new Imagen(color(0, 0, 255), (width/2)-450, 40, 0, 0.0015*height, "Titulo");
   figuras = new Figura[7];
@@ -19,10 +19,10 @@ void setup() {
   figuras[5]=new  Cuadrado(color(255, 255, 0), 200, 100, 0, 0.0025*height);
   figuras[6]=new Paralelogramo(color(100, 100, 255), 200, 100, 0, 0.0025*height);
   botones = new Figura[4];
-  botones[0]=new Boton(color(160, 52, 114), 150+0*width/3, height/2, 0, height/500, "Creador");
-  botones[1]=new Boton(color(0, 0, 205), 150+1*width/3, height/2, 0, height/500, "  Jugar");
-  botones[2]=new Boton(color(199, 21, 133), 150+2*width/3, height/2, 0, height/500, "Créditos");
-  botones[3]=new Boton(color(255, 215, 0), width-100, 40, 0, height/500, "Regresar");
+  botones[0]=new Boton(color(160, 52, 114), 150+0*width/3, height/2, 30, height/500, "Creador");
+  botones[1]=new Boton(color(0, 0, 205), 150+1*width/3, height/2, 30, height/500, "  Jugar");
+  botones[2]=new Boton(color(199, 21, 133), 150+2*width/3, height/2, 30, height/500, "Créditos");
+  botones[3]=new Boton(color(255, 215, 0), width-100, 80, 30, height/500, "Regresar");
 }
 
 void drawMalla(float scale) {

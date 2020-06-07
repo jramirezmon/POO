@@ -40,7 +40,7 @@ abstract class Figura {
     }
   }
   boolean seleccion_centro() {
-    if (dist(mouseX, mouseY, prs[0], prs[1])<130) {
+    if (dist(mouseX, mouseY, prs[0], prs[1])<65) {
       e=true;
       return e ;
     } else {
