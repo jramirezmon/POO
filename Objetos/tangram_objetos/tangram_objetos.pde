@@ -18,10 +18,11 @@ void setup() {
   figuras[4]=new Triangulo(color(0, 255, 255), 200, 100, 1, 0.00125*height);
   figuras[5]=new  Cuadrado(color(255, 255, 0), 200, 100, 0, 0.0025*height);
   figuras[6]=new Paralelogramo(color(100, 100, 255), 200, 100, 0, 0.0025*height);
-  botones = new Figura[3];
+  botones = new Figura[4];
   botones[0]=new Boton(color(160, 52, 114), 150+0*width/3, height/2, 0, height/500, "Creador");
-  botones[1]=new Boton(color(160, 52, 114), 150+1*width/3, height/2, 0, height/500, "  Jugar");
-  botones[2]=new Boton(color(160, 52, 114), 150+2*width/3, height/2, 0, height/500, "Créditos");
+  botones[1]=new Boton(color(0, 0, 205), 150+1*width/3, height/2, 0, height/500, "  Jugar");
+  botones[2]=new Boton(color(199, 21, 133), 150+2*width/3, height/2, 0, height/500, "Créditos");
+  botones[3]=new Boton(color(255, 215, 0), width-100, 40, 0, height/500, "Regresar");
 }
 
 void drawMalla(float scale) {
@@ -63,8 +64,8 @@ void draw() {
   }
 }
 int menu() {
-  for (Figura boton : botones ) {  
-    boton.display();
+  for (int i = 0; i < 3; i++) {
+    botones[i].display();
   }
   if (mousePressed && (mouseButton == LEFT)) {
     int contador = 0;
@@ -84,9 +85,9 @@ int menu() {
       contador +=1;
     }
   }
-  float y = sin(radians(frameCount*3));
-  for (Figura boton : botones ) {  
-    boton.move(0, y, 0, 1);
+  float y = sin(radians(frameCount*3));  
+  for (int i = 0; i < 3; i++) {
+    botones[i].move(0, y, 0, 1);
   }
   imagenes[0].move(0, y, 0, 1);
   return 0;
@@ -94,7 +95,8 @@ int menu() {
 
 int juego() {
   loadData("nivel1");
-  for (Figura figuraNivel : figurasNivel ) {  
+  botones[3].display();
+  for (Figura figuraNivel : figurasNivel ) { 
     figuraNivel.display();
   }
   for (Figura figura : figuras ) {  
@@ -163,6 +165,11 @@ int juego() {
           figura.move(1, 0, 0, 1);
         }
       }
+    }
+  }
+  if (mousePressed && (mouseButton == LEFT)) {
+    if (botones[3].seleccion_centro()) {
+      return 0;
     }
   }
   if (condicionDeVictoria()) {
@@ -245,6 +252,7 @@ void loadData(String nombre) {
 }
 
 int modo_creador() {
+  botones[3].display();
   if (keyPressed) {
     if (key == 'g' || key == 'G') {
       saveData(figuras, "nivel1");
@@ -321,6 +329,11 @@ int modo_creador() {
           figura.move(1, 0, 0, 1);
         }
       }
+    }
+  }
+  if (mousePressed && (mouseButton == LEFT)) {
+    if (botones[3].seleccion_centro()) {
+      return 0;
     }
   }
   return 2;
