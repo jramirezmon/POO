@@ -1,4 +1,5 @@
 boolean victoria = false;
+boolean drawMalla = true;
 Figura[] figuras;
 Figura[] figurasNivel;
 Figura[] botones;
@@ -22,8 +23,31 @@ void setup() {
   botones[1]=new Boton(color(160, 52, 114), 150+1*width/3, height/2, 0, height/500, "  Jugar");
   botones[2]=new Boton(color(160, 52, 114), 150+2*width/3, height/2, 0, height/500, "Créditos");
 }
+
+void drawMalla(float scale) {
+  push();
+  strokeWeight(1);
+  int i;
+  for (i=0; i<=width/scale; i++) {
+    stroke(0, 0, 0, 20);
+    line(i*scale, 0, i*scale, height);
+  }
+  for (i=0; i<=height/scale; i++) {
+    stroke(0, 0, 0, 20);
+    line(0, i*scale, width, i*scale);
+  }
+  pop();
+}
+
+void keyPressed() {
+  if (key == 'm' || key == 'M')
+    drawMalla = !drawMalla;
+}
+
 void draw() {
   background(255);
+    if (drawMalla)
+    drawMalla(10);
   switch (caso) {
   case 0:
     background(255, 250, 5);
