@@ -1,51 +1,51 @@
 {"piezas": [
   {
-    "posicion_y": 463,
-    "id": 0,
-    "posicion_x": 310,
-    "escala": 1.75,
-    "rotacion": 43.99998474121094
-  },
-  {
     "posicion_y": 388,
-    "id": 1,
-    "posicion_x": 385,
+    "id": 0,
+    "posicion_x": 380,
     "escala": 1.75,
     "rotacion": -45
   },
   {
-    "posicion_y": 305,
+    "posicion_y": 465,
+    "id": 1,
+    "posicion_x": 310,
+    "escala": 1.75,
+    "rotacion": 45
+  },
+  {
+    "posicion_y": 306,
     "id": 2,
-    "posicion_x": 223,
+    "posicion_x": 222,
     "escala": 1.225000023841858,
     "rotacion": -1
   },
   {
-    "posicion_y": 351,
+    "posicion_y": 350,
     "id": 3,
-    "posicion_x": 309,
+    "posicion_x": 306,
     "escala": 0.875,
-    "rotacion": 225.00003051757812
+    "rotacion": -135
   },
   {
-    "posicion_y": 449,
+    "posicion_y": 453,
     "id": 4,
-    "posicion_x": 211,
+    "posicion_x": 212,
     "escala": 0.875,
     "rotacion": 135
   },
   {
-    "posicion_y": 389,
+    "posicion_y": 390,
     "id": 5,
     "posicion_x": 248,
     "escala": 1.75,
-    "rotacion": 44
+    "rotacion": 46
   },
   {
-    "posicion_y": 295,
+    "posicion_y": 294,
     "id": 6,
     "posicion_x": 340,
     "escala": 1.75,
-    "rotacion": -44.80003356933594
+    "rotacion": 134
   }
 ]}

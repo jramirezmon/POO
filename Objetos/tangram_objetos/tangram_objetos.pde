@@ -26,7 +26,7 @@ void draw() {
   background(255);
   switch (caso) {
   case 0:
-    background(255,250,5);
+    background(255, 250, 5);
     imagenes[0].display();
     caso=menu();
     break;
@@ -143,6 +143,10 @@ int juego() {
   }
   if (condicionDeVictoria()) {
     delay(300);
+    for (Figura figura : figuras )
+    {  
+      figura.move(random(10, 300), random(10, 300), 0, 1);
+    }
     return 0;
   }
   return 1;
