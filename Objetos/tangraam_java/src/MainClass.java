@@ -21,7 +21,7 @@ public class MainClass extends PApplet {
     Figura[] figurasNivel;
 
     public void settings() {
-        size(800, 800);
+        size(900, 680);
         figuras = new Figura[7];
         figuras[0] = new Triangulo(color(0, 0, 255), 100, 100, 1, 0.0025f * height);
         figuras[1] = new Triangulo(color(255, 0, 0), 100, 100, 1, 0.0025f * height);
