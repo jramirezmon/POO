@@ -13,19 +13,19 @@ abstract class Figura{
         prs[2]= tempr;
         prs[3]=temps;
     }
-    public void display() {
-        Tangram.processing.push();
-        Tangram.processing.fill(c);
-        Tangram.processing.translate(prs[0],prs[1]);
-        Tangram.processing.rotate(radians(prs[2]));
-        Tangram.processing.scale(prs[3]);
-        Tangram.processing.stroke(0);
+    void display() {
+        MainClass.processing.push();
+        MainClass.processing.fill(c);
+        MainClass.processing.translate(prs[0],prs[1]);
+        MainClass.processing.rotate(radians(prs[2]));
+        MainClass.processing.scale(prs[3]);
+        MainClass.processing.stroke(0);
         drawFigura();
-        Tangram.processing.pop();
+        MainClass.processing.pop();
     }
     abstract void drawFigura();
 
-   public void move(float x,float y ,float r,int st) {
+    void move(float x,float y ,float r,int st) {
         prs[0] = prs[0]+x;
         prs[1] = prs[1]+y;
         prs[2] = prs[2]+r;

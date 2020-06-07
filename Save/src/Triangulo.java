@@ -4,7 +4,7 @@ public class Triangulo extends Figura {
     }
 
     void drawFigura() {
-        Tangram.processing.triangle(-30, -30, 70, -30, -30, 70);
+        MainClass.processing.triangle(-30, -30, 70, -30, -30, 70);
     }
 }
 
